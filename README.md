@@ -7,7 +7,8 @@ The goal is to build your very own pokedex.
 **Resources**
 
 > **UITableViewCell:**  
-https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html
+https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html  
+
 > **UITableViewDataSource:**  
 https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDataSource_Protocol/
 
