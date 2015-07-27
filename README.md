@@ -17,6 +17,10 @@ The goal is to build your very own pokedex.
 
 **Bonus (WIP)**
 
+* Add additional information to you pokemon. You could even create a `Pokemon` class to add additional functionality.  
+
+* Find a way to play the sound for each pokemon on it's respective detail page.  
+
 * When filtering alphabetically, diplay a-z on the right size of the screen allowing the user to quickly get to the letter they're looking for.  
 
 <img src="https://github.com/accesscode-2-2/unit-1-hw-week-1/blob/master/images/IMG_0004.PNG?raw=true" width="250" />
