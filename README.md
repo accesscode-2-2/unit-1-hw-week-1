@@ -18,6 +18,7 @@ The goal is to build your very own pokedex.
 **Bonus (WIP)**
 
 * Add additional information to you pokemon. You could even create a `Pokemon` class to add additional functionality.  
+* Try implementing this API (http://pokeapi.co/)  
 
 * Find a way to play the sound for each pokemon on it's respective detail page.  
 
