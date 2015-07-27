@@ -17,7 +17,8 @@ The goal is to build your very own pokedex.
 
 **Bonus (WIP)**
 
-* When filtering alphabetically, diplay a-z on the right size of the screen allowing the user to quickly get to the letter they're looking for.
+* When filtering alphabetically, diplay a-z on the right size of the screen allowing the user to quickly get to the letter they're looking for.  
+
 <img src="https://github.com/accesscode-2-2/unit-1-hw-week-1/blob/master/images/IMG_0004.PNG?raw=true" width="250" />
 
 **Resources**
