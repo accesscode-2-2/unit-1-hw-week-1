@@ -20,5 +20,6 @@
 @property (nonatomic) NSString *poke_image_uri;
 @property (nonatomic) NSString *poke_resource_uri;
 @property (nonatomic) NSMutableArray *poke_types;
+@property (nonatomic, readonly) NSString *propertyPrefix;
 
 @end

@@ -8,13 +8,14 @@
 //
 
 #import "PokemonArrayBuilder.h"
+#import "Pokemon.h"
 
 @implementation PokemonArrayBuilder
 
 + (NSArray *)pokemonArrayFromJSON:(NSData *)objectNotation error:(NSError **)error {
     NSError *localError = nil;
     
-    NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:objectNotation
+    NSArray *results = [NSJSONSerialization JSONObjectWithData:objectNotation
                                                                  options:0
                                                                    error:&localError];
     if (localError != nil) {
@@ -22,11 +23,37 @@
         return nil;
     }
     
-    NSLog(@"%@", parsedObject);
+    NSMutableArray *allPokemon = [[NSMutableArray alloc] init];
     
-    NSMutableArray *pokemonGroup = [[NSMutableArray alloc] init];
+    //NSLog(@"Pokemon count: %lu", results.count);
+    //NSLog(@"Results: %@", results);
     
-    return nil;
+    for (NSDictionary *pokemonDict in results) {
+        Pokemon *pokemon = [[Pokemon alloc] init];
+        //NSLog(@"%@", pokemonDict);
+        
+        for (NSString *key in pokemonDict) {
+            NSLog(@"Key: %@", key);
+            
+            NSString *prefixedKey = [NSString stringWithFormat:@"%@%@", pokemon.propertyPrefix, key];
+            if ([pokemon respondsToSelector:NSSelectorFromString(prefixedKey)]) {
+                
+                [pokemon setValue:[pokemonDict valueForKey:key] forKey:prefixedKey];
+                
+            }
+        }
+        
+        NSLog(@"%lu", pokemon.poke_id);
+        NSLog(@"%@", pokemon.poke_image_uri);
+        NSLog(@"%@", pokemon.poke_name);
+        NSLog(@"%@", pokemon.poke_resource_uri);
+        NSLog(@"%@", pokemon.poke_types);
+        
+        [allPokemon addObject:pokemon];
+
+    }
+    
+    return allPokemon;
 }
 
 @end

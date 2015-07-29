@@ -6,12 +6,16 @@
 //  Copyright (c) 2015 Elber Carneiro. All rights reserved.
 //
 
+#import "PokeDexDetailViewController.h"
 #import "PokeDexTableViewController.h"
 
+#import "Pokemon.h"
+#import "PokemonAPICommunicator.h"
+#import "PokemonAPIManager.h"
+
 @interface PokeDexTableViewController ()
-
-@property (nonatomic) NSMutableArray *allPokemon;
-
+@property (nonatomic) NSArray *allPokemon;
+@property (strong, nonatomic) PokemonAPIManager *manager;
 @end
 
 @implementation PokeDexTableViewController
@@ -19,36 +23,95 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // setup the manager and all the delegates
+    self.manager = [[PokemonAPIManager alloc] init];
+    self.manager.communicator = [[PokemonAPICommunicator alloc] init];
+    self.manager.communicator.delegate = (id<PokemonAPICommunicatorDelegate>) self.manager;
+    self.manager.delegate = (id<PokemonAPIManagerDelegate>) self;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // after manager is set up, fetch the data
+    [self.manager fetchAllPokemon];
+}
+
+// if data is successfully fetched, load it into the tableview
+- (void)didReceiveAllPokemon:(NSArray *)allPokemon {
+    self.allPokemon = allPokemon;
+    
+    // this ensures that as soon as we get the data, the table reloads. If you instead
+    // only call the reloadData method without wrapping it in a dispatch_async block,
+    // the user will have to tap on the tableview first before it reloads. If the
+    // user never taps the screen will look blank forever. That would be LAAAME!
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+}
+
+// if the data is not fetched log the error
+- (void)fetchingAllPokemonFailedWithError:(NSError *)error {
+    NSLog(@"Error %@, %@", error, [error localizedDescription]);
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return self.allPokemon.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pokemonCell" forIndexPath:indexPath];
+    
+    Pokemon *pokemon = self.allPokemon[indexPath.row];
+    
+    // setup text
+    cell.textLabel.text = pokemon.poke_name;
+    
+    // setup image
+    // MAY NEED TO DO SOME ASYNC OPTIMIZATION HERE, OR CACHING I DUNNO. SCROLLING IS SLLLOOOOOWWW
+    NSURL *imageURL = [NSURL URLWithString:pokemon.poke_image_uri];
+    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+    cell.imageView.image = [UIImage imageWithData:imageData];
     
     return cell;
 }
-*/
+
+
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+     
+     // get the indexPath for the tapped cell
+     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+     
+     // get the pokemon whose info we will render
+     Pokemon *pokemon = self.allPokemon[indexPath.row];
+     
+     // get the pokemon info
+     NSString *pokemonName = pokemon.poke_name;
+     NSString *pokemonImageURI = pokemon.poke_image_uri;
+     NSUInteger pokemonID = pokemon.poke_id;
+     NSArray *pokemonTypes = pokemon.poke_types;
+     
+     // initialize next viewController
+     PokeDexDetailViewController *vc = segue.destinationViewController;
+     
+     // set destination viewController properties
+     vc.pokemonName = pokemonName;
+     vc.pokemonImageURI = pokemonImageURI;
+     vc.pokemonID = pokemonID;
+     vc.pokemonTypes = pokemonTypes;
+ }
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -84,14 +147,5 @@
 }
 */
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

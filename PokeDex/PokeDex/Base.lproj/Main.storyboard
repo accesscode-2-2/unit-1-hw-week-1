@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="P9x-eZ-RUG">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -13,11 +14,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9Tm-8k-IVy">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pokemonCell" id="9Tm-8k-IVy">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Tm-8k-IVy" id="cTp-iA-Asp">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="TdI-Az-g8R" kind="show" id="DhG-Sz-Qeb"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -30,6 +34,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8b-4D-JcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="281" y="396"/>
+        </scene>
+        <!--Poke Dex Detail View Controller-->
+        <scene sceneID="Jev-d6-cQM">
+            <objects>
+                <viewController id="TdI-Az-g8R" customClass="PokeDexDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DgH-dM-0yc"/>
+                        <viewControllerLayoutGuide type="bottom" id="IZZ-WV-syL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2YE-jC-zIF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7f7-cI-EFX">
+                                <rect key="frame" x="279" y="94" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bya-gZ-Qf9">
+                                <rect key="frame" x="275" y="123" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="CYY-Jf-jvz"/>
+                                    <constraint firstAttribute="width" secondItem="Bya-gZ-Qf9" secondAttribute="height" multiplier="1:1" id="X1o-Ml-Wmc"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Bya-gZ-Qf9" secondAttribute="centerX" id="3zS-Ym-9jH"/>
+                            <constraint firstItem="Bya-gZ-Qf9" firstAttribute="top" secondItem="7f7-cI-EFX" secondAttribute="bottom" constant="8" id="ArG-Of-Gjr"/>
+                            <constraint firstAttribute="centerX" secondItem="7f7-cI-EFX" secondAttribute="centerX" id="B0B-1M-QCD"/>
+                            <constraint firstItem="7f7-cI-EFX" firstAttribute="top" secondItem="DgH-dM-0yc" secondAttribute="bottom" constant="30" id="t6o-aQ-Mi2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pokemonImageView" destination="Bya-gZ-Qf9" id="Ydj-JH-ypu"/>
+                        <outlet property="pokemonNameLabel" destination="7f7-cI-EFX" id="PUk-aa-9N6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r3D-jl-Rlj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="938" y="401"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WDm-In-wQM">

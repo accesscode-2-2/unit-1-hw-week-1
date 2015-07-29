@@ -11,4 +11,11 @@
 
 @implementation Pokemon
 
+- (id)init {
+    if (self = [super init]) {
+        _propertyPrefix = PROPERTY_PREFIX;
+    }
+    return self;
+}
+
 @end
