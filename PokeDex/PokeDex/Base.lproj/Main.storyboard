@@ -54,9 +54,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bya-gZ-Qf9">
-                                <rect key="frame" x="275" y="123" width="50" height="50"/>
+                                <rect key="frame" x="225" y="123" width="150" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="CYY-Jf-jvz"/>
+                                    <constraint firstAttribute="height" constant="150" id="CYY-Jf-jvz"/>
                                     <constraint firstAttribute="width" secondItem="Bya-gZ-Qf9" secondAttribute="height" multiplier="1:1" id="X1o-Ml-Wmc"/>
                                 </constraints>
                             </imageView>
