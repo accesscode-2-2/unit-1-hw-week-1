@@ -10,10 +10,15 @@
 
 @interface Pokemon : NSObject
 
-@property (nonatomic) NSUInteger id;
-@property (nonatomic) NSString *name;
-@property (nonatomic) NSString *image_uri;
-@property (nonatomic) NSString *resource_uri;
-@property (nonatomic) NSMutableArray *types;
+#define PROPERTY_PREFIX @"poke_"
+
+// "id" is a reserved word, so I added a "poke_" prefix to all the properties.
+// When I do the JSON parsing and I have to use the respondsToSelector method
+// I'll have to add the prefix as well.
+@property (nonatomic) NSUInteger poke_id;
+@property (nonatomic) NSString *poke_name;
+@property (nonatomic) NSString *poke_image_uri;
+@property (nonatomic) NSString *poke_resource_uri;
+@property (nonatomic) NSMutableArray *poke_types;
 
 @end
