@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PokeDexTableViewController.h
 //  PokeDex
 //
 //  Created by Elber Carneiro on 7/29/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PokeDexTableViewController : UITableViewController
 
 @end
-
