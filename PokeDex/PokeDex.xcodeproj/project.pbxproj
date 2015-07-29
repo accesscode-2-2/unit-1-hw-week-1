@@ -14,6 +14,7 @@
 		3BB2E7E01B68F31E00D2F9DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB2E7DE1B68F31E00D2F9DA /* LaunchScreen.xib */; };
 		3BB2E7EC1B68F31E00D2F9DA /* PokeDexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2E7EB1B68F31E00D2F9DA /* PokeDexTests.m */; };
 		3BB2E7F71B68F3DD00D2F9DA /* PokeDexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2E7F61B68F3DD00D2F9DA /* PokeDexTableViewController.m */; };
+		3BB2E7FA1B68F4E200D2F9DA /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2E7F91B68F4E200D2F9DA /* Pokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		3BB2E7EB1B68F31E00D2F9DA /* PokeDexTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokeDexTests.m; sourceTree = "<group>"; };
 		3BB2E7F51B68F3DD00D2F9DA /* PokeDexTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokeDexTableViewController.h; sourceTree = "<group>"; };
 		3BB2E7F61B68F3DD00D2F9DA /* PokeDexTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokeDexTableViewController.m; sourceTree = "<group>"; };
+		3BB2E7F81B68F4E200D2F9DA /* Pokemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
+		3BB2E7F91B68F4E200D2F9DA /* Pokemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				3BB2E7D91B68F31E00D2F9DA /* Main.storyboard */,
 				3BB2E7F51B68F3DD00D2F9DA /* PokeDexTableViewController.h */,
 				3BB2E7F61B68F3DD00D2F9DA /* PokeDexTableViewController.m */,
+				3BB2E7F81B68F4E200D2F9DA /* Pokemon.h */,
+				3BB2E7F91B68F4E200D2F9DA /* Pokemon.m */,
 				3BB2E7DC1B68F31E00D2F9DA /* Images.xcassets */,
 				3BB2E7DE1B68F31E00D2F9DA /* LaunchScreen.xib */,
 				3BB2E7CF1B68F31E00D2F9DA /* Supporting Files */,
@@ -220,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BB2E7D51B68F31E00D2F9DA /* AppDelegate.m in Sources */,
+				3BB2E7FA1B68F4E200D2F9DA /* Pokemon.m in Sources */,
 				3BB2E7F71B68F3DD00D2F9DA /* PokeDexTableViewController.m in Sources */,
 				3BB2E7D21B68F31E00D2F9DA /* main.m in Sources */,
 			);
