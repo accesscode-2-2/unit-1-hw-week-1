@@ -15,6 +15,9 @@
 		3BB2E7EC1B68F31E00D2F9DA /* PokeDexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2E7EB1B68F31E00D2F9DA /* PokeDexTests.m */; };
 		3BB2E7F71B68F3DD00D2F9DA /* PokeDexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2E7F61B68F3DD00D2F9DA /* PokeDexTableViewController.m */; };
 		3BB2E7FA1B68F4E200D2F9DA /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2E7F91B68F4E200D2F9DA /* Pokemon.m */; };
+		3BB2E8001B68FA8A00D2F9DA /* PokemonArrayBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2E7FF1B68FA8A00D2F9DA /* PokemonArrayBuilder.m */; };
+		3BB2E8031B68FC8E00D2F9DA /* PokemonAPICommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2E8021B68FC8E00D2F9DA /* PokemonAPICommunicator.m */; };
+		3BB2E80A1B6900DC00D2F9DA /* PokemonAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2E8091B6900DC00D2F9DA /* PokemonAPIManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,14 @@
 		3BB2E7F61B68F3DD00D2F9DA /* PokeDexTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokeDexTableViewController.m; sourceTree = "<group>"; };
 		3BB2E7F81B68F4E200D2F9DA /* Pokemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
 		3BB2E7F91B68F4E200D2F9DA /* Pokemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
+		3BB2E7FE1B68FA8A00D2F9DA /* PokemonArrayBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokemonArrayBuilder.h; sourceTree = "<group>"; };
+		3BB2E7FF1B68FA8A00D2F9DA /* PokemonArrayBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonArrayBuilder.m; sourceTree = "<group>"; };
+		3BB2E8011B68FC8E00D2F9DA /* PokemonAPICommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokemonAPICommunicator.h; sourceTree = "<group>"; };
+		3BB2E8021B68FC8E00D2F9DA /* PokemonAPICommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonAPICommunicator.m; sourceTree = "<group>"; };
+		3BB2E8041B68FCE000D2F9DA /* PokemonAPICommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokemonAPICommunicatorDelegate.h; sourceTree = "<group>"; };
+		3BB2E8081B6900DC00D2F9DA /* PokemonAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokemonAPIManager.h; sourceTree = "<group>"; };
+		3BB2E8091B6900DC00D2F9DA /* PokemonAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonAPIManager.m; sourceTree = "<group>"; };
+		3BB2E80B1B69010600D2F9DA /* PokemonAPIManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokemonAPIManagerDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +102,14 @@
 				3BB2E7F61B68F3DD00D2F9DA /* PokeDexTableViewController.m */,
 				3BB2E7F81B68F4E200D2F9DA /* Pokemon.h */,
 				3BB2E7F91B68F4E200D2F9DA /* Pokemon.m */,
+				3BB2E8011B68FC8E00D2F9DA /* PokemonAPICommunicator.h */,
+				3BB2E8021B68FC8E00D2F9DA /* PokemonAPICommunicator.m */,
+				3BB2E8041B68FCE000D2F9DA /* PokemonAPICommunicatorDelegate.h */,
+				3BB2E7FE1B68FA8A00D2F9DA /* PokemonArrayBuilder.h */,
+				3BB2E7FF1B68FA8A00D2F9DA /* PokemonArrayBuilder.m */,
+				3BB2E8081B6900DC00D2F9DA /* PokemonAPIManager.h */,
+				3BB2E8091B6900DC00D2F9DA /* PokemonAPIManager.m */,
+				3BB2E80B1B69010600D2F9DA /* PokemonAPIManagerDelegate.h */,
 				3BB2E7DC1B68F31E00D2F9DA /* Images.xcassets */,
 				3BB2E7DE1B68F31E00D2F9DA /* LaunchScreen.xib */,
 				3BB2E7CF1B68F31E00D2F9DA /* Supporting Files */,
@@ -225,8 +244,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BB2E7D51B68F31E00D2F9DA /* AppDelegate.m in Sources */,
+				3BB2E8031B68FC8E00D2F9DA /* PokemonAPICommunicator.m in Sources */,
+				3BB2E80A1B6900DC00D2F9DA /* PokemonAPIManager.m in Sources */,
 				3BB2E7FA1B68F4E200D2F9DA /* Pokemon.m in Sources */,
 				3BB2E7F71B68F3DD00D2F9DA /* PokeDexTableViewController.m in Sources */,
+				3BB2E8001B68FA8A00D2F9DA /* PokemonArrayBuilder.m in Sources */,
 				3BB2E7D21B68F31E00D2F9DA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
