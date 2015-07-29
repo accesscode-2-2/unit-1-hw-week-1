@@ -18,4 +18,8 @@
     return self;
 }
 
+- (void)setPoke_name:(NSString *)poke_name {
+    _poke_name = [poke_name capitalizedString];
+}
+
 @end

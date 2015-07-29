@@ -33,7 +33,7 @@
         //NSLog(@"%@", pokemonDict);
         
         for (NSString *key in pokemonDict) {
-            NSLog(@"Key: %@", key);
+            //NSLog(@"Key: %@", key);
             
             NSString *prefixedKey = [NSString stringWithFormat:@"%@%@", pokemon.propertyPrefix, key];
             if ([pokemon respondsToSelector:NSSelectorFromString(prefixedKey)]) {
