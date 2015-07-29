@@ -15,6 +15,8 @@
 
 @interface PokeDexTableViewController ()
 @property (nonatomic) NSArray *allPokemon;
+
+// pokemonAPIManager will handle all the communication with the API and the JSON parsing
 @property (strong, nonatomic) PokemonAPIManager *manager;
 @end
 
@@ -23,13 +25,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // setup the manager and all the delegates
+    // setup the manager and all the delegates so all the classes can talk to each other
     self.manager = [[PokemonAPIManager alloc] init];
     self.manager.communicator = [[PokemonAPICommunicator alloc] init];
     self.manager.communicator.delegate = (id<PokemonAPICommunicatorDelegate>) self.manager;
     self.manager.delegate = (id<PokemonAPIManagerDelegate>) self;
     
-    // after manager is set up, fetch the data
+    // after manager is set up, fetch the data and create array of all Pokemon
     [self.manager fetchAllPokemon];
 }
 
@@ -53,6 +55,7 @@
 
 #pragma mark - Table view data source
 
+// only one section for now. Might change this later depending on the sorting options I add
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     return 1;
@@ -87,8 +90,6 @@
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
      
      // get the indexPath for the tapped cell
      NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];

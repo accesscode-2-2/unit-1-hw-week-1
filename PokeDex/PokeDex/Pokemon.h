@@ -14,7 +14,9 @@
 
 // "id" is a reserved word, so I added a "poke_" prefix to all the properties.
 // When I do the JSON parsing and I have to use the respondsToSelector method
-// I'll have to add the prefix as well.
+// I'll have to add the prefix as well, which is why I need the readonly
+// property 'propertyPrefix'
+
 @property (nonatomic) NSUInteger poke_id;
 @property (nonatomic) NSString *poke_name;
 @property (nonatomic) NSString *poke_image_uri;

@@ -18,6 +18,7 @@
     return self;
 }
 
+// I want to make sure I make any name capitalization here and only once
 - (void)setPoke_name:(NSString *)poke_name {
     _poke_name = [poke_name capitalizedString];
 }
