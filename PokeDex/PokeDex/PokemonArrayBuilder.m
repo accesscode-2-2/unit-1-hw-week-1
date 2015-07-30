@@ -18,7 +18,7 @@
 + (NSArray *)pokemonArrayFromJSON:(NSData *)objectNotation error:(NSError **)error {
     NSError *localError = nil;
     
-    NSArray *results = [NSJSONSerialization JSONObjectWithData:objectNotation
+    NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:objectNotation
                                                                  options:0
                                                                    error:&localError];
     if (localError != nil) {
@@ -31,8 +31,10 @@
     //NSLog(@"Pokemon count: %lu", results.count);
     //NSLog(@"Results: %@", results);
     
+    NSArray *pokeDex = [parsedObject valueForKey:@"pokedex"];
+    
     // loops through all the dictionary entries in the json results
-    for (NSDictionary *pokemonDict in results) {
+    for (NSDictionary *pokemonDict in pokeDex) {
         
         // creates a pokemon instance for each one
         Pokemon *pokemon = [[Pokemon alloc] init];
