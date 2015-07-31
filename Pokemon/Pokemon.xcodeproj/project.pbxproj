@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		8DD0D6711B65C9200007E103 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD0D6701B65C9200007E103 /* main.m */; };
 		8DD0D6741B65C9200007E103 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD0D6731B65C9200007E103 /* AppDelegate.m */; };
-		8DD0D6771B65C9200007E103 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD0D6761B65C9200007E103 /* ViewController.m */; };
-		8DD0D67A1B65C9200007E103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DD0D6781B65C9200007E103 /* Main.storyboard */; };
 		8DD0D67C1B65C9200007E103 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DD0D67B1B65C9200007E103 /* Images.xcassets */; };
 		8DD0D67F1B65C9200007E103 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD0D67D1B65C9200007E103 /* LaunchScreen.xib */; };
 		8DD0D68B1B65C9200007E103 /* PokemonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD0D68A1B65C9200007E103 /* PokemonTests.m */; };
+		EBB84D5A1B6A6E9800BA055E /* PokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB84D591B6A6E9800BA055E /* PokedexTableViewController.m */; };
+		EBB84D5C1B6A84EE00BA055E /* pokedex.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB84D5B1B6A84EE00BA055E /* pokedex.storyboard */; };
+		EBD8CD621B6B05DA00BD5F51 /* infoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD8CD611B6B05DA00BD5F51 /* infoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +33,16 @@
 		8DD0D6701B65C9200007E103 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8DD0D6721B65C9200007E103 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8DD0D6731B65C9200007E103 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8DD0D6751B65C9200007E103 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8DD0D6761B65C9200007E103 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		8DD0D6791B65C9200007E103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8DD0D67B1B65C9200007E103 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8DD0D67E1B65C9200007E103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8DD0D6841B65C9200007E103 /* PokemonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD0D6891B65C9200007E103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DD0D68A1B65C9200007E103 /* PokemonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonTests.m; sourceTree = "<group>"; };
+		EBB84D581B6A6E9800BA055E /* PokedexTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokedexTableViewController.h; sourceTree = "<group>"; };
+		EBB84D591B6A6E9800BA055E /* PokedexTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokedexTableViewController.m; sourceTree = "<group>"; };
+		EBB84D5B1B6A84EE00BA055E /* pokedex.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = pokedex.storyboard; sourceTree = "<group>"; };
+		EBD8CD601B6B05D900BD5F51 /* infoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = infoViewController.h; sourceTree = "<group>"; };
+		EBD8CD611B6B05DA00BD5F51 /* infoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = infoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +86,13 @@
 			children = (
 				8DD0D6721B65C9200007E103 /* AppDelegate.h */,
 				8DD0D6731B65C9200007E103 /* AppDelegate.m */,
-				8DD0D6751B65C9200007E103 /* ViewController.h */,
-				8DD0D6761B65C9200007E103 /* ViewController.m */,
-				8DD0D6781B65C9200007E103 /* Main.storyboard */,
+				EBB84D581B6A6E9800BA055E /* PokedexTableViewController.h */,
+				EBB84D591B6A6E9800BA055E /* PokedexTableViewController.m */,
+				EBB84D5B1B6A84EE00BA055E /* pokedex.storyboard */,
 				8DD0D67B1B65C9200007E103 /* Images.xcassets */,
 				8DD0D67D1B65C9200007E103 /* LaunchScreen.xib */,
+				EBD8CD601B6B05D900BD5F51 /* infoViewController.h */,
+				EBD8CD611B6B05DA00BD5F51 /* infoViewController.m */,
 				8DD0D66E1B65C9200007E103 /* Supporting Files */,
 			);
 			path = Pokemon;
@@ -199,9 +204,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DD0D67A1B65C9200007E103 /* Main.storyboard in Resources */,
 				8DD0D67F1B65C9200007E103 /* LaunchScreen.xib in Resources */,
 				8DD0D67C1B65C9200007E103 /* Images.xcassets in Resources */,
+				EBB84D5C1B6A84EE00BA055E /* pokedex.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,8 +224,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DD0D6771B65C9200007E103 /* ViewController.m in Sources */,
 				8DD0D6741B65C9200007E103 /* AppDelegate.m in Sources */,
+				EBB84D5A1B6A6E9800BA055E /* PokedexTableViewController.m in Sources */,
+				EBD8CD621B6B05DA00BD5F51 /* infoViewController.m in Sources */,
 				8DD0D6711B65C9200007E103 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,14 +250,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8DD0D6781B65C9200007E103 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8DD0D6791B65C9200007E103 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8DD0D67D1B65C9200007E103 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -418,6 +416,7 @@
 				8DD0D6901B65C9200007E103 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8DD0D6911B65C9200007E103 /* Build configuration list for PBXNativeTarget "PokemonTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +425,7 @@
 				8DD0D6931B65C9200007E103 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
