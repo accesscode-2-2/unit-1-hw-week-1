@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EUJ-8Y-cHm">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="CXU-B7-8Mq">
+            <objects>
+                <navigationController id="EUJ-8Y-cHm" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pbV-PZ-YZl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CG3-yD-t9e" kind="relationship" relationship="rootViewController" id="LfM-z9-ssi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FaM-fk-JgK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1024" y="171"/>
+        </scene>
+        <!--Pokes Table View Controller-->
+        <scene sceneID="1Oi-Lt-bRh">
+            <objects>
+                <tableViewController id="CG3-yD-t9e" customClass="PokesTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="rpN-SI-1WI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PKTableIdentifier" id="n2h-Oj-vss">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n2h-Oj-vss" id="QJe-4c-oEv">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Ayb-j7-QR5" kind="show" id="dwv-17-esj"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CG3-yD-t9e" id="en8-sL-S91"/>
+                            <outlet property="delegate" destination="CG3-yD-t9e" id="Evb-io-G81"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" prompt="POCKET MONSTERS!" id="e9G-FT-WBR">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="ZGQ-Ox-wYr">
+                            <rect key="frame" x="180" y="37" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="A-Z"/>
+                                <segment title="Types"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentedControlValueChanged:" destination="CG3-yD-t9e" eventType="valueChanged" id="f0F-pW-kI7"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="ZGQ-Ox-wYr" id="fVQ-96-grG"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dTK-tK-9Nz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-339" y="171"/>
+        </scene>
+        <!--Pokes Detail View Controller-->
+        <scene sceneID="ntt-85-BEG">
+            <objects>
+                <viewController id="Ayb-j7-QR5" customClass="PokesDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EES-PZ-aqL"/>
+                        <viewControllerLayoutGuide type="bottom" id="m6P-QN-QGi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Kk-EZ-YGn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjD-2z-9AL">
+                                <rect key="frame" x="219" y="124" width="163" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ruR-vX-cZU">
+                                <rect key="frame" x="180" y="212" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="9LE-DG-eIo"/>
+                                    <constraint firstAttribute="width" constant="240" id="ftA-xD-xGu"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vWf-Nh-nh0">
+                                <rect key="frame" x="204" y="504" width="192" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="Dlg-kA-KtG"/>
+                                    <constraint firstAttribute="height" constant="84" id="o3E-ek-kyQ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="vWf-Nh-nh0" secondAttribute="centerX" id="0Z5-Ii-JVi"/>
+                            <constraint firstItem="ruR-vX-cZU" firstAttribute="top" secondItem="LjD-2z-9AL" secondAttribute="bottom" constant="60" id="AfH-WT-vln"/>
+                            <constraint firstAttribute="centerX" secondItem="LjD-2z-9AL" secondAttribute="centerX" id="Csu-Wn-Qkr"/>
+                            <constraint firstAttribute="centerX" secondItem="ruR-vX-cZU" secondAttribute="centerX" id="YeB-fj-5mx"/>
+                            <constraint firstItem="m6P-QN-QGi" firstAttribute="top" secondItem="vWf-Nh-nh0" secondAttribute="bottom" constant="12" id="rFY-9B-Wma"/>
+                            <constraint firstItem="LjD-2z-9AL" firstAttribute="top" secondItem="EES-PZ-aqL" secondAttribute="bottom" constant="30" id="y1p-mG-PfG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="LjD-2z-9AL" id="Wy5-hA-b0R"/>
+                        <outlet property="spriteImageView" destination="ruR-vX-cZU" id="oPe-FI-HGA"/>
+                        <outlet property="typeImageView" destination="vWf-Nh-nh0" id="3Fc-2W-ARH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vHU-OU-PFn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="352" y="171"/>
+        </scene>
+    </scenes>
+</document>
