@@ -15,7 +15,9 @@
 
 @end
 
-@implementation PokemonTableViewController
+@implementation
+
+PokemonTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -424,13 +426,26 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    
+
     NSArray *key = [self.pokemon allKeys];
     NSString *words = key [section];
     
     return words;
 }
 
+- (UIView *) tableView:(UITableView *) tableView viewForHeaderInSection:(NSInteger)section{
+
+    if (section == 0) {
+        
+    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"Alphabetically", @"Type"]];
+        
+        return segmentedControl;
+    }
+    
+    return nil;
+    
+}
+    
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -160,6 +160,7 @@
 		1DFFF8851B6B71910076EC4C /* wigglytuff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DFFF7ED1B6B71910076EC4C /* wigglytuff.png */; };
 		1DFFF8861B6B71910076EC4C /* zapdos.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DFFF7EE1B6B71910076EC4C /* zapdos.png */; };
 		1DFFF8871B6B71910076EC4C /* zubat.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DFFF7EF1B6B71910076EC4C /* zubat.png */; };
+		1DFFF88D1B6B94490076EC4C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFFF88C1B6B94490076EC4C /* DetailViewController.m */; };
 		8DD0D6711B65C9200007E103 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD0D6701B65C9200007E103 /* main.m */; };
 		8DD0D6741B65C9200007E103 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD0D6731B65C9200007E103 /* AppDelegate.m */; };
 		8DD0D67A1B65C9200007E103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DD0D6781B65C9200007E103 /* Main.storyboard */; };
@@ -333,6 +334,8 @@
 		1DFFF7ED1B6B71910076EC4C /* wigglytuff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wigglytuff.png; sourceTree = "<group>"; };
 		1DFFF7EE1B6B71910076EC4C /* zapdos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zapdos.png; sourceTree = "<group>"; };
 		1DFFF7EF1B6B71910076EC4C /* zubat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zubat.png; sourceTree = "<group>"; };
+		1DFFF88B1B6B94490076EC4C /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		1DFFF88C1B6B94490076EC4C /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		8DD0D66B1B65C9200007E103 /* Pokemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD0D66F1B65C9200007E103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DD0D6701B65C9200007E103 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -388,6 +391,8 @@
 				8DD0D6721B65C9200007E103 /* AppDelegate.h */,
 				8DD0D6731B65C9200007E103 /* AppDelegate.m */,
 				8DD0D6781B65C9200007E103 /* Main.storyboard */,
+				1DFFF88B1B6B94490076EC4C /* DetailViewController.h */,
+				1DFFF88C1B6B94490076EC4C /* DetailViewController.m */,
 				1DFFF7551B6B37BA0076EC4C /* PokemonTableViewController.h */,
 				1DFFF7561B6B37BA0076EC4C /* PokemonTableViewController.m */,
 				1DFFF7581B6B71900076EC4C /* abra@2x.png */,
@@ -830,6 +835,7 @@
 				8DD0D6741B65C9200007E103 /* AppDelegate.m in Sources */,
 				8DD0D6711B65C9200007E103 /* main.m in Sources */,
 				1DFFF7571B6B37BA0076EC4C /* PokemonTableViewController.m in Sources */,
+				1DFFF88D1B6B94490076EC4C /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
