@@ -7,7 +7,6 @@
 //
 
 #import "PKTableViewController.h"
-#import "PKTypesTableViewController.h"
 #import "PKViewController.h"
 #import "PKNames.h"
 
@@ -38,23 +37,16 @@
 }
 
 -(IBAction) segmentedControlChanged {
-   /*
+    
     switch (segmentedControl.selectedSegmentIndex) {
         case 0:
-            PKTableViewController;
+            NSLog(@"a-z Selected");
             break;
         case 1:
-            PKTableViewController = PKTypesTableViewController;
+            NSLog(@"type Selected");
             break;
         default:
             break;
-    }
-    
-    */
-    
-    if(segmentedControl.selectedSegmentIndex == 0)
-    {
-        // code for the first button
     }
 
 
