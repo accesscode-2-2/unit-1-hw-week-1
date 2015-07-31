@@ -29,11 +29,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PKTableIdentifier" id="n2h-Oj-vss">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PKTableIdentifier" id="n2h-Oj-vss">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n2h-Oj-vss" id="QJe-4c-oEv">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Ayb-j7-QR5" kind="show" id="dwv-17-esj"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -45,7 +48,60 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTK-tK-9Nz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-299" y="31"/>
+            <point key="canvasLocation" x="-339" y="171"/>
+        </scene>
+        <!--Pokes Detail View Controller-->
+        <scene sceneID="ntt-85-BEG">
+            <objects>
+                <viewController id="Ayb-j7-QR5" customClass="PokesDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EES-PZ-aqL"/>
+                        <viewControllerLayoutGuide type="bottom" id="m6P-QN-QGi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Kk-EZ-YGn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjD-2z-9AL">
+                                <rect key="frame" x="219" y="124" width="163" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ruR-vX-cZU">
+                                <rect key="frame" x="180" y="212" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="9LE-DG-eIo"/>
+                                    <constraint firstAttribute="width" constant="240" id="ftA-xD-xGu"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vWf-Nh-nh0">
+                                <rect key="frame" x="204" y="504" width="192" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="Dlg-kA-KtG"/>
+                                    <constraint firstAttribute="height" constant="84" id="o3E-ek-kyQ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="vWf-Nh-nh0" secondAttribute="centerX" id="0Z5-Ii-JVi"/>
+                            <constraint firstItem="ruR-vX-cZU" firstAttribute="top" secondItem="LjD-2z-9AL" secondAttribute="bottom" constant="60" id="AfH-WT-vln"/>
+                            <constraint firstAttribute="centerX" secondItem="LjD-2z-9AL" secondAttribute="centerX" id="Csu-Wn-Qkr"/>
+                            <constraint firstAttribute="centerX" secondItem="ruR-vX-cZU" secondAttribute="centerX" id="YeB-fj-5mx"/>
+                            <constraint firstItem="m6P-QN-QGi" firstAttribute="top" secondItem="vWf-Nh-nh0" secondAttribute="bottom" constant="12" id="rFY-9B-Wma"/>
+                            <constraint firstItem="LjD-2z-9AL" firstAttribute="top" secondItem="EES-PZ-aqL" secondAttribute="bottom" constant="30" id="y1p-mG-PfG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="LjD-2z-9AL" id="Wy5-hA-b0R"/>
+                        <outlet property="spriteImageView" destination="ruR-vX-cZU" id="oPe-FI-HGA"/>
+                        <outlet property="typeImageView" destination="vWf-Nh-nh0" id="GgF-P5-aRY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vHU-OU-PFn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="352" y="171"/>
         </scene>
     </scenes>
 </document>

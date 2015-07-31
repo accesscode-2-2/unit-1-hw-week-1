@@ -15,6 +15,7 @@
 		69AABDB61B6AFC9100AE6340 /* PokedexHWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AABDB51B6AFC9100AE6340 /* PokedexHWTests.m */; };
 		69AABDC11B6AFCC900AE6340 /* PokesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AABDC01B6AFCC900AE6340 /* PokesTableViewController.m */; };
 		69AABDC71B6AFD8500AE6340 /* PokesDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AABDC61B6AFD8500AE6340 /* PokesDatabase.m */; };
+		69B699B51B6BB84000CC8DDE /* PokesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B699B41B6BB84000CC8DDE /* PokesDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		69AABDC01B6AFCC900AE6340 /* PokesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokesTableViewController.m; sourceTree = "<group>"; };
 		69AABDC51B6AFD8500AE6340 /* PokesDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokesDatabase.h; sourceTree = "<group>"; };
 		69AABDC61B6AFD8500AE6340 /* PokesDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokesDatabase.m; sourceTree = "<group>"; };
+		69B699B31B6BB84000CC8DDE /* PokesDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokesDetailViewController.h; sourceTree = "<group>"; };
+		69B699B41B6BB84000CC8DDE /* PokesDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokesDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,8 @@
 				69AABDC61B6AFD8500AE6340 /* PokesDatabase.m */,
 				69AABDBF1B6AFCC900AE6340 /* PokesTableViewController.h */,
 				69AABDC01B6AFCC900AE6340 /* PokesTableViewController.m */,
+				69B699B31B6BB84000CC8DDE /* PokesDetailViewController.h */,
+				69B699B41B6BB84000CC8DDE /* PokesDetailViewController.m */,
 				69AABDA31B6AFC9100AE6340 /* Main.storyboard */,
 				69AABDA61B6AFC9100AE6340 /* Images.xcassets */,
 				69AABDA81B6AFC9100AE6340 /* LaunchScreen.xib */,
@@ -224,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69B699B51B6BB84000CC8DDE /* PokesDetailViewController.m in Sources */,
 				69AABD9F1B6AFC9100AE6340 /* AppDelegate.m in Sources */,
 				69AABDC71B6AFD8500AE6340 /* PokesDatabase.m in Sources */,
 				69AABD9C1B6AFC9100AE6340 /* main.m in Sources */,
@@ -422,6 +428,7 @@
 				69AABDBB1B6AFC9100AE6340 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		69AABDBC1B6AFC9100AE6340 /* Build configuration list for PBXNativeTarget "PokedexHWTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +437,7 @@
 				69AABDBE1B6AFC9100AE6340 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

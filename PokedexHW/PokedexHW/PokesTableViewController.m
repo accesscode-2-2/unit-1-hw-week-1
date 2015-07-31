@@ -7,6 +7,7 @@
 //
 
 #import "PokesTableViewController.h"
+#import "PokesDetailViewController.h"
 
 @interface PokesTableViewController ()
 
@@ -20,7 +21,7 @@
     PokesDatabase *myPokesDB = [[PokesDatabase alloc] init];
     [myPokesDB makeAllThePokes];
     self.pokesDatabase = myPokesDB;
-    NSLog(@"%@",self.pokesDatabase.pokemon);
+//    NSLog(@"%@",self.pokesDatabase.pokemon);
     
 }
 
@@ -50,7 +51,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PKTableIdentifier" forIndexPath:indexPath];
     
-    NSLog(@"%@",indexPath);
+//    NSLog(@"%@",indexPath);
     
     NSArray *keys = [self.pokesDatabase.pokemon allKeys];
     NSString *key = [keys objectAtIndex:indexPath.section];
@@ -71,6 +72,23 @@
     
     return key;
     
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    NSLog(@"Preparing");
+    
+    PokesDetailViewController *detailVC = segue.destinationViewController;
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    NSArray *types = [self.pokesDatabase.pokemon allKeys];
+    NSString *type = [types objectAtIndex:indexPath.section];
+    NSArray *names = [self.pokesDatabase.pokemon objectForKey:type];
+    NSString *name = [names objectAtIndex:indexPath.row];
+    
+    detailVC.name = [name capitalizedString];
+    detailVC.spriteImage = [UIImage imageNamed:name];
+    detailVC.typeImage = [UIImage imageNamed:type];
 }
 
 
