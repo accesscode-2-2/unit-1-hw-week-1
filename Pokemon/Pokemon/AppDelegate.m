@@ -16,7 +16,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    NSString *music = [[NSBundle mainBundle]pathForResource:@"palettetown" ofType:@"mp3"];
+    pokemonMusic = [[AVAudioPlayer alloc] initWithContentsOfURL: [NSURL fileURLWithPath:music] error:NULL];
+    pokemonMusic.delegate = self;
+    pokemonMusic.numberOfLoops = -1;
+    [pokemonMusic play];
+    
     return YES;
 }
 

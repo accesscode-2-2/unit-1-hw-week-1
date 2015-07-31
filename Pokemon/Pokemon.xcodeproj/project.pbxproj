@@ -15,6 +15,8 @@
 		8DD0D68B1B65C9200007E103 /* PokemonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD0D68A1B65C9200007E103 /* PokemonTests.m */; };
 		BF4BEBD31B6A862300E1F8A7 /* PokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4BEBD21B6A862300E1F8A7 /* PokedexTableViewController.m */; };
 		BF4BEBD61B6A867700E1F8A7 /* PokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4BEBD51B6A867700E1F8A7 /* PokemonDetailViewController.m */; };
+		BF5736801B6C09DE0073D6A7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF57367F1B6C09DD0073D6A7 /* AVFoundation.framework */; };
+		BF5736821B6C0AE00073D6A7 /* palettetown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BF5736811B6C0AE00073D6A7 /* palettetown.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		BF4BEBD21B6A862300E1F8A7 /* PokedexTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokedexTableViewController.m; sourceTree = "<group>"; };
 		BF4BEBD41B6A867700E1F8A7 /* PokemonDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokemonDetailViewController.h; sourceTree = "<group>"; };
 		BF4BEBD51B6A867700E1F8A7 /* PokemonDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonDetailViewController.m; sourceTree = "<group>"; };
+		BF57367F1B6C09DD0073D6A7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BF5736811B6C0AE00073D6A7 /* palettetown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = palettetown.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF5736801B6C09DE0073D6A7 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +71,7 @@
 		8DD0D6621B65C9200007E103 = {
 			isa = PBXGroup;
 			children = (
+				BF57367F1B6C09DD0073D6A7 /* AVFoundation.framework */,
 				8DD0D66D1B65C9200007E103 /* Pokemon */,
 				8DD0D6871B65C9200007E103 /* PokemonTests */,
 				8DD0D66C1B65C9200007E103 /* Products */,
@@ -101,6 +107,7 @@
 		8DD0D66E1B65C9200007E103 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BF5736811B6C0AE00073D6A7 /* palettetown.mp3 */,
 				8DD0D66F1B65C9200007E103 /* Info.plist */,
 				8DD0D6701B65C9200007E103 /* main.m */,
 			);
@@ -204,6 +211,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF5736821B6C0AE00073D6A7 /* palettetown.mp3 in Resources */,
 				8DD0D67A1B65C9200007E103 /* Main.storyboard in Resources */,
 				8DD0D67F1B65C9200007E103 /* LaunchScreen.xib in Resources */,
 				8DD0D67C1B65C9200007E103 /* Images.xcassets in Resources */,
