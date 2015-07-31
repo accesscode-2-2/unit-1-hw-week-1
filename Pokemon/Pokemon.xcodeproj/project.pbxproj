@@ -86,10 +86,10 @@
 			children = (
 				8DD0D6721B65C9200007E103 /* AppDelegate.h */,
 				8DD0D6731B65C9200007E103 /* AppDelegate.m */,
-				BF4BEBD11B6A862300E1F8A7 /* PokedexTableViewController.h */,
-				BF4BEBD21B6A862300E1F8A7 /* PokedexTableViewController.m */,
 				BF4BEBD41B6A867700E1F8A7 /* PokemonDetailViewController.h */,
 				BF4BEBD51B6A867700E1F8A7 /* PokemonDetailViewController.m */,
+				BF4BEBD11B6A862300E1F8A7 /* PokedexTableViewController.h */,
+				BF4BEBD21B6A862300E1F8A7 /* PokedexTableViewController.m */,
 				8DD0D6781B65C9200007E103 /* Main.storyboard */,
 				8DD0D67B1B65C9200007E103 /* Images.xcassets */,
 				8DD0D67D1B65C9200007E103 /* LaunchScreen.xib */,

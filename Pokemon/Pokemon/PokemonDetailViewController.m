@@ -10,7 +10,7 @@
 
 @interface PokemonDetailViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *pokemonNames;
+@property (weak, nonatomic) IBOutlet UILabel *pokemonNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *pokemonImage;
 
 @end
@@ -20,9 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.pokemonNames.text = self.pokemonName;
-//    self.pokemonImage.image = [UIImage imageNamed:self.pokemonName];
-    // Do any additional setup after loading the view.
+    self.pokemonNameLabel.text = self.pokemonName;
+    self.pokemonImage.image = [UIImage imageNamed:self.pokemonName];
+    
 }
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    
+}
+
 
 @end

@@ -15,7 +15,6 @@
 @property (nonatomic) NSDictionary * allPokemon;
 @property (nonatomic) NSMutableArray *allPokemonAlphabetized;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
-
 @property (nonatomic) BOOL showAllPokemon;
 
 @end
@@ -24,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     self.title = @"Pokedex";
     
@@ -480,6 +480,11 @@
         
         return cell;
     }
+    
 }
 
+- (IBAction)buttonPressed:(id)sender {
+    UIViewController *nextViewController = [[UIViewController alloc] init];
+    [self.navigationController pushViewController:nextViewController animated:YES];
+}
 @end
