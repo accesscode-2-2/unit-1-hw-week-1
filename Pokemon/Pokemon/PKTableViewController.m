@@ -506,7 +506,7 @@
     
     //borders around cells
     
-    cell.layer.borderWidth = 3.0f;
+    cell.layer.borderWidth = 2.0f;
     cell.layer.cornerRadius = 10.0f;
     cell.layer.borderColor = [UIColor colorWithRed:95/255.0 green:155/255.0 blue:217/255.0 alpha:1].CGColor;
     
