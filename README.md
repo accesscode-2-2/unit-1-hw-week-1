@@ -28,13 +28,6 @@ The goal is to build your very own pokedex.
 
 **Resources**
 
-> **pokemon**  
-https://en.wikipedia.org/wiki/Pokémon  
-
-> **pokedex**  
-http://bulbapedia.bulbagarden.net/wiki/List_of_Pokémon_by_National_Pokédex_number#Generation_I  
-
-
 > **UITableViewCell:**  
 https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html  
 
