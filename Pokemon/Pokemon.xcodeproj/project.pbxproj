@@ -13,6 +13,7 @@
 		8DD0D67C1B65C9200007E103 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DD0D67B1B65C9200007E103 /* Images.xcassets */; };
 		8DD0D67F1B65C9200007E103 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD0D67D1B65C9200007E103 /* LaunchScreen.xib */; };
 		8DD0D68B1B65C9200007E103 /* PokemonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD0D68A1B65C9200007E103 /* PokemonTests.m */; };
+		F79862461B6BF0F700B76139 /* PKTypesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F79862451B6BF0F700B76139 /* PKTypesTableViewController.m */; };
 		F7C046071B6AA6AB0091FC71 /* PKNames.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C046061B6AA6AB0091FC71 /* PKNames.m */; };
 		F7C0460A1B6AA6D60091FC71 /* PKTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C046091B6AA6D60091FC71 /* PKTableViewController.m */; };
 		F7C0460D1B6AA70D0091FC71 /* PKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C0460C1B6AA70D0091FC71 /* PKViewController.m */; };
@@ -40,6 +41,8 @@
 		8DD0D6841B65C9200007E103 /* PokemonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD0D6891B65C9200007E103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DD0D68A1B65C9200007E103 /* PokemonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonTests.m; sourceTree = "<group>"; };
+		F79862441B6BF0F700B76139 /* PKTypesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKTypesTableViewController.h; sourceTree = "<group>"; };
+		F79862451B6BF0F700B76139 /* PKTypesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKTypesTableViewController.m; sourceTree = "<group>"; };
 		F7C046051B6AA6AB0091FC71 /* PKNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKNames.h; sourceTree = "<group>"; };
 		F7C046061B6AA6AB0091FC71 /* PKNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKNames.m; sourceTree = "<group>"; };
 		F7C046081B6AA6D60091FC71 /* PKTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKTableViewController.h; sourceTree = "<group>"; };
@@ -93,6 +96,8 @@
 				F7C046061B6AA6AB0091FC71 /* PKNames.m */,
 				F7C046081B6AA6D60091FC71 /* PKTableViewController.h */,
 				F7C046091B6AA6D60091FC71 /* PKTableViewController.m */,
+				F79862441B6BF0F700B76139 /* PKTypesTableViewController.h */,
+				F79862451B6BF0F700B76139 /* PKTypesTableViewController.m */,
 				F7C0460B1B6AA70D0091FC71 /* PKViewController.h */,
 				F7C0460C1B6AA70D0091FC71 /* PKViewController.m */,
 				8DD0D6781B65C9200007E103 /* Main.storyboard */,
@@ -233,6 +238,7 @@
 				8DD0D6741B65C9200007E103 /* AppDelegate.m in Sources */,
 				F7C046071B6AA6AB0091FC71 /* PKNames.m in Sources */,
 				8DD0D6711B65C9200007E103 /* main.m in Sources */,
+				F79862461B6BF0F700B76139 /* PKTypesTableViewController.m in Sources */,
 				F7C0460D1B6AA70D0091FC71 /* PKViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,7 @@
 //
 
 #import "PKTableViewController.h"
+#import "PKTypesTableViewController.h"
 #import "PKViewController.h"
 #import "PKNames.h"
 
@@ -17,6 +18,8 @@
 @end
 
 @implementation PKTableViewController
+
+@synthesize  segmentedControl;
 
 -(void) viewDidLoad {
     [super viewDidLoad];
@@ -33,6 +36,33 @@
     }
     
 }
+
+-(IBAction) segmentedControlChanged {
+   /*
+    switch (segmentedControl.selectedSegmentIndex) {
+        case 0:
+            PKTableViewController;
+            break;
+        case 1:
+            PKTableViewController = PKTypesTableViewController;
+            break;
+        default:
+            break;
+    }
+    
+    */
+    
+    if(segmentedControl.selectedSegmentIndex == 0)
+    {
+        // code for the first button
+    }
+
+
+}
+
+
+
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
    
@@ -69,6 +99,14 @@
     return cell;
 }
 
+/*
+
+-(void) dealloc {
+    
+    [segmentedControl release];
+    [super dealloc];
+}
+*/
 
 
 

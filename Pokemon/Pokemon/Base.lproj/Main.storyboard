@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="Sd0-GJ-uaq">
             <objects>
                 <tableViewController id="duh-3N-mUh" customClass="PKTableViewController" sceneMemberID="viewController">
@@ -13,6 +13,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="nLP-JW-I7a">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem id="oi8-G5-nHO">
+                                    <nil key="title"/>
+                                    <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="CPP-pI-mxA">
+                                        <rect key="frame" x="180" y="7" width="240" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="a-z"/>
+                                            <segment title="type"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentedControlChanged" destination="duh-3N-mUh" eventType="valueChanged" id="GeY-fk-ica"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PokeInDexCellIndentifier" textLabel="gkk-XM-Xh3" detailTextLabel="IGV-WH-eWL" style="IBUITableViewCellStyleValue1" id="Uwy-Sf-wJg">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -56,11 +76,56 @@
                             <outlet property="delegate" destination="duh-3N-mUh" id="4B8-Tl-Edc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="rlv-gY-LSg"/>
+                    <navigationItem key="navigationItem" id="rlv-gY-LSg">
+                        <nil key="title"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="CPP-pI-mxA" id="ewM-ci-n71"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AJp-H3-Wly" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="507" y="109"/>
+            <point key="canvasLocation" x="635" y="78"/>
+        </scene>
+        <!--Types Table View Controller-->
+        <scene sceneID="49s-as-sNu">
+            <objects>
+                <tableViewController id="B6T-do-c45" customClass="PKTypesTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Z1F-ut-we0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="9Fe-Ss-GkG" detailTextLabel="Ovs-C1-8ir" style="IBUITableViewCellStyleValue1" id="hcU-BD-PZF">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hcU-BD-PZF" id="hy8-jk-vSY">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Fe-Ss-GkG">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ovs-C1-8ir">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="B6T-do-c45" id="eHp-lm-3x1"/>
+                            <outlet property="delegate" destination="B6T-do-c45" id="taZ-6u-4Yu"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iUM-U0-Wy7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="646" y="736"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Gmd-JT-HX0">
@@ -117,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zvl-dL-kSt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1256" y="103"/>
+            <point key="canvasLocation" x="1524" y="78"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VyT-bh-gdz">
@@ -133,7 +198,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ygj-ta-byQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-314" y="108"/>
+            <point key="canvasLocation" x="-314" y="78"/>
         </scene>
     </scenes>
 </document>

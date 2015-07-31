@@ -9,5 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface PKTableViewController : UITableViewController
+{
+
+    UISegmentedControl *segmentedControl;
+    
+}
+
+@property (nonatomic, retain) IBOutlet  UISegmentedControl *segmentedControl;
+
+-(IBAction) segmentedControlChanged;
 
 @end
