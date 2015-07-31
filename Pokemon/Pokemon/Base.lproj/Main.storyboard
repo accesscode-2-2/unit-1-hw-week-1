@@ -30,6 +30,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="7JQ-E9-nM0">
                         <nil key="title"/>
+                        <barButtonItem key="backBarButtonItem" title="one two three" id="Fpw-gr-BnI"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="P7p-qp-Ff4">
                             <rect key="frame" x="245" y="7" width="110" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
