@@ -10,4 +10,16 @@
 
 @implementation Pokemon
 
++ (NSInteger)numberOfTypes:(NSArray *)pokemon {
+    NSMutableArray *types = [NSMutableArray new];
+    for(Pokemon *pk in pokemon){
+        //NSLog(@"%lu", [types indexOfObject:pk.type]);
+        if ([types indexOfObject:pk.type] == NSNotFound) {
+            [types addObject:pk.type];
+        }
+    }
+    
+    return types.count;
+}
+
 @end

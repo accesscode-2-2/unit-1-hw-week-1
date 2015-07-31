@@ -14,4 +14,6 @@
 @property (nonatomic, strong) NSString *type;
 @property (nonatomic, strong) NSString *image;
 
++ (NSInteger)numberOfTypes:(NSArray *)pokemon;
+
 @end

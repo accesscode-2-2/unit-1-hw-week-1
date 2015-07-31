@@ -330,24 +330,33 @@
                        @"Psychic"
                        ];
     
-    
+    //create a mutable array to hold the new instances of pokemon created below in the for loop
     NSMutableArray *pokemons = [NSMutableArray new];
     
     for (int i = 0; i < pokemon151.count; i++) {
-        
+        //create an instance of Pokemon with each loop
         Pokemon *pokemon = [[Pokemon alloc] init];
+        //give it a name according to the names array (pokemon151)
         pokemon.name = pokemon151[i];
+        //give it a type according to the types array
         pokemon.type = types[i];
+        //create a string to represent the lowercase string of the pokemon151
         NSString *lowercaseName = [pokemon151[i] lowercaseString];
+        //create a string to represent farfetchd (from Farfetch'd)
         NSString *pokeImageName = [lowercaseName stringByReplacingOccurrencesOfString:@"'" withString:@""];
+        //give it an image by matching the string created above from the pokemon151
         pokemon.image = pokeImageName;
+        //add the instance to the new pokemons mutable array
         [pokemons addObject:pokemon];
     }
     
+    //I originally used the below to sort the pokemon151 array alphabetically
     //NSArray *sortedPokemon151 = [pokemon151 sortedArrayUsingSelector: @selector(caseInsensitiveCompare:)];
 
+    //fill the tableData array with the pokemons
     self.tableData = [NSMutableArray arrayWithArray:pokemons];
     
+    //start the app with the table data arranged alphabetically by name
     [self sortTableDataArrayByName];
     
 }
@@ -355,13 +364,22 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
+    //create an instance of indexPath for the table view...??...REVIEW
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    NSString *pokeName = [self.tableData objectAtIndex: indexPath.row];
+    
+    //Create a string to represent the pokeName, from the tableData array at each index path row
+    NSString *pokeName = self.tableData [indexPath.row];
+    
+    //All the steps below represent the pokeImageName (Should create a method for this!)
     NSString *lowercaseName = [pokeName lowercaseString];
     NSString *pokeImageName = [lowercaseName stringByReplacingOccurrencesOfString:@"'" withString:@""];
     
+    //create an instance of the pokeDexViewController in segue to set the pokeName & PokeImageName
     pokeDexViewController *vc = segue.destinationViewController;
+    
+    //pokeLabelName is a property of the pokeDexViewController(.h), getter/setter
     vc.pokeLabelName = pokeName;
+    //pokeImage is also a property of the pokeDexViewController(.h), getter/setter
     vc.pokeImage = [UIImage imageNamed:pokeImageName];
     
 }
@@ -371,10 +389,10 @@
     if (self.azTypeControlButton.selectedSegmentIndex == 0) {
         return 1;
     } else {
-        // return the number of types
+        // return the number of types from Pokemon class implementation method "numberOfTypes"
+        
+        return [Pokemon numberOfTypes:self.tableData];
     }
-
-    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -404,30 +422,39 @@
 }
 
 - (void)sortTableDataArrayByName {
+    
+    //the below is a method used to sort, suggested by t.a.Eric from stackOverflow
+    //note* initWithKey:@"name" to reference the name property of the Pokemon class
     NSSortDescriptor *sortDescriptor;
     sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name"
                                                  ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-    NSArray *sortedArray;
-    sortedArray = [self.tableData sortedArrayUsingDescriptors:sortDescriptors];
+    NSArray *sortedArray = [self.tableData sortedArrayUsingDescriptors:sortDescriptors];
+    
     self.tableData = [NSMutableArray arrayWithArray:sortedArray];
 }
 
 - (void)sortTableDataArrayByType {
+    
+    //the below is a method used to sort, suggested by t.a.Eric from stackOverflow
+    //note* initWithKey:@"type" to reference the name property of the Pokemon class
     NSSortDescriptor *sortDescriptor;
     sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"type"
                                                  ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-    NSArray *sortedArray;
-    sortedArray = [self.tableData sortedArrayUsingDescriptors:sortDescriptors];
+    NSArray *sortedArray = [self.tableData sortedArrayUsingDescriptors:sortDescriptors];
+    
     self.tableData = [NSMutableArray arrayWithArray:sortedArray];
 }
 
 - (IBAction)sortAZType:(id)sender {
+    
     if (self.azTypeControlButton.selectedSegmentIndex == 1) {
-        //sort by type
+        
         [self sortTableDataArrayByType];
+    
     }else if (self.azTypeControlButton.selectedSegmentIndex == 0){
+        
         [self sortTableDataArrayByName];
     }
     
