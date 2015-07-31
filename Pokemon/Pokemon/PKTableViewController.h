@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "PokemonFactsViewController.h"
 
-@interface PKTableView : UITableViewController
+@interface PKTableViewController : UITableViewController
+
+
 
 @end

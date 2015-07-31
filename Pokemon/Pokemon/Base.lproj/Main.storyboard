@@ -7,11 +7,11 @@
         <!--Root View Controller-->
         <scene sceneID="1tK-Ah-Uxy">
             <objects>
-                <tableViewController id="KVd-cg-Tvd" customClass="PKTableView" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fXZ-Wf-G1D">
+                <tableViewController id="KVd-cg-Tvd" customClass="PKTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="fXZ-Wf-G1D">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="CHY-D6-hMa">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -47,6 +47,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xcD-it-Xpe" id="iEi-Zf-1CY">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="K6g-Zc-wMo" kind="show" id="duT-iC-y4b"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -55,10 +58,62 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="CeE-rr-hnM"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="imA-FV-bpF" id="FKJ-gb-4w4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x3Q-Sf-j5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="675" y="356"/>
+        </scene>
+        <!--Pokemon Facts View Controller-->
+        <scene sceneID="tuZ-YI-zXU">
+            <objects>
+                <viewController id="K6g-Zc-wMo" customClass="PokemonFactsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ihe-4k-C7L"/>
+                        <viewControllerLayoutGuide type="bottom" id="nLd-LK-zyy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2fu-JU-59q">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suy-8T-PUI">
+                                <rect key="frame" x="279" y="289" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Jp-LU-KLa">
+                                <rect key="frame" x="225" y="131" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="G7N-fs-zhG"/>
+                                    <constraint firstAttribute="width" constant="150" id="Lu2-C3-Rts"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Suy-8T-PUI" secondAttribute="centerX" id="R4B-dr-in7"/>
+                            <constraint firstItem="Suy-8T-PUI" firstAttribute="top" secondItem="1Jp-LU-KLa" secondAttribute="bottom" constant="8" id="XEV-jy-nNE"/>
+                            <constraint firstAttribute="centerX" secondItem="1Jp-LU-KLa" secondAttribute="centerX" id="huX-ri-az3"/>
+                            <constraint firstAttribute="centerY" secondItem="1Jp-LU-KLa" secondAttribute="centerY" id="oCg-V1-fYH"/>
+                            <constraint firstAttribute="centerY" secondItem="Suy-8T-PUI" secondAttribute="centerY" id="vmz-WP-0Fx"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="oCg-V1-fYH"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="pokemonFactsLabel" destination="Suy-8T-PUI" id="p8z-15-MBy"/>
+                        <outlet property="pokemonFactsView" destination="1Jp-LU-KLa" id="ijc-wI-kul"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r7R-Rj-JBy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1323" y="354"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Joj-S6-N3X">

@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D264A3E1B66CE0600CD1EA4 /* PKTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D264A3D1B66CE0600CD1EA4 /* PKTableView.m */; };
+		4D264A3E1B66CE0600CD1EA4 /* PKTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D264A3D1B66CE0600CD1EA4 /* PKTableViewController.m */; };
+		4D5800871B69B9D10087B823 /* PokemonFactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5800861B69B9D10087B823 /* PokemonFactsViewController.m */; };
 		8DD0D6711B65C9200007E103 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD0D6701B65C9200007E103 /* main.m */; };
 		8DD0D6741B65C9200007E103 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD0D6731B65C9200007E103 /* AppDelegate.m */; };
 		8DD0D67A1B65C9200007E103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DD0D6781B65C9200007E103 /* Main.storyboard */; };
@@ -27,8 +28,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4D264A3C1B66CE0600CD1EA4 /* PKTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKTableView.h; sourceTree = "<group>"; };
-		4D264A3D1B66CE0600CD1EA4 /* PKTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKTableView.m; sourceTree = "<group>"; };
+		4D264A3C1B66CE0600CD1EA4 /* PKTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKTableViewController.h; sourceTree = "<group>"; };
+		4D264A3D1B66CE0600CD1EA4 /* PKTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKTableViewController.m; sourceTree = "<group>"; };
+		4D5800851B69B9D10087B823 /* PokemonFactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokemonFactsViewController.h; sourceTree = "<group>"; };
+		4D5800861B69B9D10087B823 /* PokemonFactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonFactsViewController.m; sourceTree = "<group>"; };
 		8DD0D66B1B65C9200007E103 /* Pokemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD0D66F1B65C9200007E103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DD0D6701B65C9200007E103 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -84,8 +87,10 @@
 				8DD0D6721B65C9200007E103 /* AppDelegate.h */,
 				8DD0D6731B65C9200007E103 /* AppDelegate.m */,
 				8DD0D6781B65C9200007E103 /* Main.storyboard */,
-				4D264A3C1B66CE0600CD1EA4 /* PKTableView.h */,
-				4D264A3D1B66CE0600CD1EA4 /* PKTableView.m */,
+				4D264A3C1B66CE0600CD1EA4 /* PKTableViewController.h */,
+				4D264A3D1B66CE0600CD1EA4 /* PKTableViewController.m */,
+				4D5800851B69B9D10087B823 /* PokemonFactsViewController.h */,
+				4D5800861B69B9D10087B823 /* PokemonFactsViewController.m */,
 				8DD0D67B1B65C9200007E103 /* Images.xcassets */,
 				8DD0D67D1B65C9200007E103 /* LaunchScreen.xib */,
 				8DD0D66E1B65C9200007E103 /* Supporting Files */,
@@ -219,8 +224,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D5800871B69B9D10087B823 /* PokemonFactsViewController.m in Sources */,
 				8DD0D6741B65C9200007E103 /* AppDelegate.m in Sources */,
-				4D264A3E1B66CE0600CD1EA4 /* PKTableView.m in Sources */,
+				4D264A3E1B66CE0600CD1EA4 /* PKTableViewController.m in Sources */,
 				8DD0D6711B65C9200007E103 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
