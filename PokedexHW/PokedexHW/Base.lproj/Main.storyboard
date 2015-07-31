@@ -20,7 +20,7 @@
             </objects>
             <point key="canvasLocation" x="-1024" y="171"/>
         </scene>
-        <!--POCKET MONSTERS-->
+        <!--Pokes Table View Controller-->
         <scene sceneID="1Oi-Lt-bRh">
             <objects>
                 <tableViewController id="CG3-yD-t9e" customClass="PokesTableViewController" sceneMemberID="viewController">
@@ -44,7 +44,22 @@
                             <outlet property="delegate" destination="CG3-yD-t9e" id="Evb-io-G81"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="POCKET MONSTERS" prompt="Welcome to the world of..." id="e9G-FT-WBR"/>
+                    <navigationItem key="navigationItem" prompt="POCKET MONSTERS!" id="e9G-FT-WBR">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="ZGQ-Ox-wYr">
+                            <rect key="frame" x="180" y="37" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="A-Z"/>
+                                <segment title="Types"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentedControlValueChanged:" destination="CG3-yD-t9e" eventType="valueChanged" id="f0F-pW-kI7"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="ZGQ-Ox-wYr" id="fVQ-96-grG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTK-tK-9Nz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,7 +111,7 @@
                     <connections>
                         <outlet property="nameLabel" destination="LjD-2z-9AL" id="Wy5-hA-b0R"/>
                         <outlet property="spriteImageView" destination="ruR-vX-cZU" id="oPe-FI-HGA"/>
-                        <outlet property="typeImageView" destination="vWf-Nh-nh0" id="GgF-P5-aRY"/>
+                        <outlet property="typeImageView" destination="vWf-Nh-nh0" id="3Fc-2W-ARH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vHU-OU-PFn" userLabel="First Responder" sceneMemberID="firstResponder"/>

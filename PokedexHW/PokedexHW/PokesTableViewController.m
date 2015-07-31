@@ -10,6 +10,7 @@
 #import "PokesDetailViewController.h"
 
 @interface PokesTableViewController ()
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 @end
 
@@ -21,8 +22,9 @@
     PokesDatabase *myPokesDB = [[PokesDatabase alloc] init];
     [myPokesDB makeAllThePokes];
     self.pokesDatabase = myPokesDB;
-//    NSLog(@"%@",self.pokesDatabase.pokemon);
+    NSLog(@"%@",self.pokesDatabase.pokemon);
     
+    NSLog(@"%@",self.pokesDatabase.AZpokemon);
 }
 
 #pragma mark - Table view data source
@@ -31,20 +33,39 @@
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
     
-    NSArray *keys = [self.pokesDatabase.pokemon allKeys];
+    //sort by type
+    if ([self.segmentedControl selectedSegmentIndex] == 1) {
+        NSArray *keys = [self.pokesDatabase.pokemon allKeys];
+        return [keys count];
+    }
     
-    return keys.count;
+    else { //sort A-Z
+        return 1;
+    }
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
     
-    NSArray *keys = [self.pokesDatabase.pokemon allKeys];
-    NSString *key = [keys objectAtIndex:section];
-    NSArray *pokemonNames = [self.pokesDatabase.pokemon objectForKey:key];;
+    NSInteger numberOfRowsInSection = 0;
+    
+    //sort by type
+    if ([self.segmentedControl selectedSegmentIndex] == 1) {
+        NSArray *keys = [self.pokesDatabase.pokemon allKeys];
+        NSString *key = [keys objectAtIndex:section];
+        NSArray *pokemonNames = [self.pokesDatabase.pokemon objectForKey:key];
+        numberOfRowsInSection = [pokemonNames count];
+    }
+    //sort A-Z
+    else{
+        NSArray *allPokemon = self.pokesDatabase.AZpokemon;
+        numberOfRowsInSection = [allPokemon count];
+//        return [[self.pokesDatabase.pokemon allValues] count];
+    }
 
-    return pokemonNames.count;
+    return numberOfRowsInSection;
 }
 
 
@@ -53,11 +74,18 @@
     
 //    NSLog(@"%@",indexPath);
     
-    NSArray *keys = [self.pokesDatabase.pokemon allKeys];
-    NSString *key = [keys objectAtIndex:indexPath.section];
-    NSArray *pokemonNames = [self.pokesDatabase.pokemon objectForKey:key];
-    NSString *name = [pokemonNames objectAtIndex:indexPath.row];
+ 
     
+    NSString *name = [[NSString alloc] init];
+    if ([self.segmentedControl selectedSegmentIndex] == 1) {
+        NSArray *keys = [self.pokesDatabase.pokemon allKeys];
+        NSString *key = [keys objectAtIndex:indexPath.section];
+        NSArray *pokemonNamesOfType = [self.pokesDatabase.pokemon objectForKey:key];
+        name = [pokemonNamesOfType objectAtIndex:indexPath.row];
+    }
+    else{
+        name = [self.pokesDatabase.AZpokemon objectAtIndex:indexPath.row];
+    }
     
     // Configure the cell...
     cell.textLabel.text = [name capitalizedString];
@@ -67,16 +95,22 @@
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    if ([self.segmentedControl selectedSegmentIndex] == 1) {
     NSArray *keys = [self.pokesDatabase.pokemon allKeys];
     NSString *key = [keys objectAtIndex:section];
-    
     return key;
+    }
+    else{
+        return @"Gotta Catch 'em All";
+    }
     
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     NSLog(@"Preparing");
+        NSLog(@"%ld",(long)[self.segmentedControl selectedSegmentIndex]);
     
     PokesDetailViewController *detailVC = segue.destinationViewController;
     
@@ -89,10 +123,11 @@
     detailVC.name = [name capitalizedString];
     detailVC.spriteImage = [UIImage imageNamed:name];
     detailVC.typeImage = [UIImage imageNamed:type];
+    
 }
-
-
-
+- (IBAction)segmentedControlValueChanged:(UISegmentedControl *)sender {
+    [self.tableView reloadData];
+}
 
 /*
 // Override to support conditional editing of the table view.
