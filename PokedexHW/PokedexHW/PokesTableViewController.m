@@ -18,13 +18,10 @@
     [super viewDidLoad];
     
     PokesDatabase *myPokesDB = [[PokesDatabase alloc] init];
+    [myPokesDB makeAllThePokes];
     self.pokesDatabase = myPokesDB;
+    NSLog(@"%@",self.pokesDatabase.pokemon);
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 #pragma mark - Table view data source
@@ -33,19 +30,19 @@
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
     
-    NSDictionary *db = self.pokesDatabase.pokemon;
-    NSArray *pokemonNames = [db allKeys];
+    NSArray *keys = [self.pokesDatabase.pokemon allKeys];
     
-    return pokemonNames.count;
+    return keys.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
     
-    NSDictionary *db = self.pokesDatabase.pokemon;
-    NSArray *pokemonNames = [db allKeys];
-    
+    NSArray *keys = [self.pokesDatabase.pokemon allKeys];
+    NSString *key = [keys objectAtIndex:section];
+    NSArray *pokemonNames = [self.pokesDatabase.pokemon objectForKey:key];;
+
     return pokemonNames.count;
 }
 
@@ -55,19 +52,24 @@
     
     NSLog(@"%@",indexPath);
     
-    NSDictionary *db = self.pokesDatabase.pokemon;
-    NSArray *keys = [db allKeys];
+    NSArray *keys = [self.pokesDatabase.pokemon allKeys];
     NSString *key = [keys objectAtIndex:indexPath.section];
-    NSArray *pokemonTypes = [db objectForKey:key];
-    NSString *type = [pokemonTypes objectAtIndex:indexPath.row];
+    NSArray *pokemonNames = [self.pokesDatabase.pokemon objectForKey:key];
+    NSString *name = [pokemonNames objectAtIndex:indexPath.row];
+    
     
     // Configure the cell...
-    cell.textLabel.text = type;
+    cell.textLabel.text = [name capitalizedString];
+    cell.imageView.image = [UIImage imageNamed:name];
     
     return cell;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    NSArray *keys = [self.pokesDatabase.pokemon allKeys];
+    NSString *key = [keys objectAtIndex:section];
+    
+    return key;
     
 }
 

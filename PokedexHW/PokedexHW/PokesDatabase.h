@@ -10,7 +10,7 @@
 
 @interface PokesDatabase : NSObject
 
-@property (nonatomic) NSDictionary *pokemon;
+@property (nonatomic) NSMutableDictionary *pokemon;
 
 -(void)makeAllThePokes;
 
