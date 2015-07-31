@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *pokemonLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *pokemonImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *pokemonBackground;
 
 @end
 
@@ -22,6 +23,7 @@
     
     self.pokemonLabel.text = self.pokemonName;
     self.pokemonImageView.image = self.pokemonImage;
+    self.pokemonBackground.image = self.pokemonImage;
 }
 
 - (void)didReceiveMemoryWarning {

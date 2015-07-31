@@ -79,6 +79,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9sL-ju-3cO" userLabel="pokemonBackground">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AFk-Vy-9sL">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6cm-sm-7vz">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="extraLight"/>
+                            </visualEffectView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jep-BX-PjX">
                                 <rect key="frame" x="225" y="225" width="150" height="150"/>
                                 <constraints>
@@ -91,7 +102,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="lb3-Q0-owL"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -100,11 +111,19 @@
                         <constraints>
                             <constraint firstItem="xJz-gt-HTp" firstAttribute="leading" secondItem="nEc-eA-qV9" secondAttribute="leading" constant="180" id="1lR-iV-pdg"/>
                             <constraint firstItem="xJz-gt-HTp" firstAttribute="width" secondItem="jep-BX-PjX" secondAttribute="width" id="Kie-0V-MhR"/>
+                            <constraint firstItem="UNb-lC-jqc" firstAttribute="top" secondItem="9sL-ju-3cO" secondAttribute="bottom" id="MgZ-Qz-RXk"/>
+                            <constraint firstItem="9sL-ju-3cO" firstAttribute="leading" secondItem="nEc-eA-qV9" secondAttribute="leading" id="N3u-X0-meY"/>
                             <constraint firstItem="jep-BX-PjX" firstAttribute="top" secondItem="xJz-gt-HTp" secondAttribute="bottom" constant="20" id="TB7-nQ-xHK"/>
                             <constraint firstAttribute="centerY" secondItem="jep-BX-PjX" secondAttribute="centerY" id="Tdv-mK-tOk"/>
+                            <constraint firstItem="9sL-ju-3cO" firstAttribute="top" secondItem="nEc-eA-qV9" secondAttribute="top" id="Vkm-rr-DAi"/>
+                            <constraint firstItem="AFk-Vy-9sL" firstAttribute="top" secondItem="wM2-X7-nf9" secondAttribute="bottom" id="eYz-LU-Mke"/>
                             <constraint firstAttribute="centerX" secondItem="xJz-gt-HTp" secondAttribute="centerX" id="ec0-oj-9fd"/>
                             <constraint firstAttribute="centerX" secondItem="jep-BX-PjX" secondAttribute="centerX" id="fYF-bg-cdN"/>
+                            <constraint firstItem="UNb-lC-jqc" firstAttribute="top" secondItem="AFk-Vy-9sL" secondAttribute="bottom" id="kud-dI-698"/>
+                            <constraint firstItem="AFk-Vy-9sL" firstAttribute="leading" secondItem="nEc-eA-qV9" secondAttribute="leading" id="oCN-5X-q67"/>
                             <constraint firstAttribute="trailing" secondItem="xJz-gt-HTp" secondAttribute="trailing" constant="180" id="v0X-QL-GCs"/>
+                            <constraint firstAttribute="trailing" secondItem="9sL-ju-3cO" secondAttribute="trailing" id="v72-Al-y6Y"/>
+                            <constraint firstAttribute="trailing" secondItem="AFk-Vy-9sL" secondAttribute="trailing" id="zRk-Bi-hWt"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -114,6 +133,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="pokemonBackground" destination="9sL-ju-3cO" id="Mly-Un-eup"/>
                         <outlet property="pokemonImageView" destination="jep-BX-PjX" id="Y3M-3w-GWG"/>
                         <outlet property="pokemonLabel" destination="xJz-gt-HTp" id="LE9-Ld-KRc"/>
                     </connections>
