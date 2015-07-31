@@ -20,10 +20,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TYh-wN-E6U">
-                                            <rect key="frame" x="239" y="8" width="123" height="29"/>
+                                            <rect key="frame" x="257" y="8" width="87" height="29"/>
                                             <segments>
                                                 <segment title="A-Z"/>
-                                                <segment title="Second"/>
+                                                <segment title="Type"/>
                                             </segments>
                                             <connections>
                                                 <action selector="onSegmentChange:" destination="1lR-CD-gLw" eventType="valueChanged" id="d6C-cp-DAc"/>

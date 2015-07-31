@@ -10,9 +10,10 @@
 
 @interface PKMasterTableViewController : UITableViewController
 
-@property (nonatomic) NSMutableArray *pokeList;
-@property (nonatomic) NSArray *pokemonTypes;
-@property (nonatomic) NSDictionary *pokedex;
+@property (nonatomic) NSArray *alphabeticalPokemon;
+@property (nonatomic) NSArray *typePokemon;
+
+@property (nonatomic) NSArray *selectedPokemon;
 
 
 
