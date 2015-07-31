@@ -5,6 +5,6 @@
       location = "group:PKIndex/PKIndex.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Pods">
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
