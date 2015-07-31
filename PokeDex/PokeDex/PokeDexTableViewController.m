@@ -15,9 +15,9 @@
 
 @interface PokeDexTableViewController ()
 @property (nonatomic) NSArray *allPokemon;
-
 // pokemonAPIManager will handle all the communication with the API and the JSON parsing
 @property (strong, nonatomic) PokemonAPIManager *manager;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *segmentedSortControl;
 @end
 
 @implementation PokeDexTableViewController
@@ -47,6 +47,10 @@
         [self.tableView reloadData];
     });
 }
+
+//- (IBAction)switchSort:(id)sender {
+//    if (self.segmentedSortControl.)
+//}
 
 // if the data is not fetched log the error
 - (void)fetchingAllPokemonFailedWithError:(NSError *)error {
@@ -80,6 +84,7 @@
     // MAY NEED TO DO SOME ASYNC OPTIMIZATION HERE, OR CACHING I DUNNO. SCROLLING IS SLLLOOOOOWWW
     NSURL *imageURL = [NSURL URLWithString:pokemon.poke_image_uri];
     NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+
     cell.imageView.image = [UIImage imageWithData:imageData];
     
     return cell;

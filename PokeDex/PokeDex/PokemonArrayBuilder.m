@@ -68,7 +68,13 @@
 
     }
     
-    return allPokemon;
+    NSSortDescriptor *sortDescriptor;
+    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"poke_name"
+                                                 ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    NSArray *alphaSortedPokemon;
+    alphaSortedPokemon = [allPokemon sortedArrayUsingDescriptors:sortDescriptors];
+    return alphaSortedPokemon;
 }
 
 @end
