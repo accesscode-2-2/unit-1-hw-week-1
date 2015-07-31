@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.
     self.title = @"Pokedex";
     
     self.showAllPokemon = YES;
@@ -483,8 +483,4 @@
     
 }
 
-- (IBAction)buttonPressed:(id)sender {
-    UIViewController *nextViewController = [[UIViewController alloc] init];
-    [self.navigationController pushViewController:nextViewController animated:YES];
-}
 @end
