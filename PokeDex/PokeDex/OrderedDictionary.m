@@ -28,7 +28,7 @@
 // however, so I had to comment out the dealloc method and it also throws a couple
 // of semantic warnings in regards to the init method. Nevertheless, IT WORKS!!!
 // It allows the section titles in the table view to be displayed in
-// GLORIOUS alphabetical order, hash table be damned!
+// GLORIOUS alphabetical order, hash table be damned! Hopefully no memory leaks...
 //
 // The original source is here:
 // http://www.cocoawithlove.com/2008/12/ordereddictionary-subclassing-cocoa.html

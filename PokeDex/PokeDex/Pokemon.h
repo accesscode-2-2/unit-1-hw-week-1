@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@import UIKit;
 
 @interface Pokemon : NSObject
 
@@ -23,6 +24,7 @@
 @property (nonatomic) NSUInteger poke_id;
 @property (nonatomic) NSString *poke_name;
 @property (nonatomic) NSString *poke_image_uri;
+@property (strong, nonatomic) UIImage *poke_image;
 @property (nonatomic) NSString *poke_resource_uri;
 @property (nonatomic) NSMutableArray *poke_types;
 @property (nonatomic, readonly) NSString *propertyPrefix;

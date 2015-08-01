@@ -13,6 +13,7 @@
 @property (nonatomic) NSString *pokemonName;
 @property (nonatomic) NSUInteger pokemonID;
 @property (nonatomic) NSString *pokemonImageURI;
+@property (strong, nonatomic) UIImage *pokemonImage;
 @property (nonatomic) NSArray *pokemonTypes;
 @property (weak, nonatomic) IBOutlet UILabel *pokemonNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *pokemonImageView;

@@ -145,17 +145,8 @@
     
     // setup text
     cell.textLabel.text = pokemon.poke_name;
-    
     // setup image
-    // THIS IMAGE LOADING SHOULD REEEEEEALLLLY NOT BE DONE HERE! I NEED TO LOAD THESE
-    // ASYNCHRONOUSLY AND CACHE THEM SOMEWHERE? THE CORRECT IMPLEMENTATION AND MEMORY
-    // MANAGEMENT IS BEYOND MY SKILLS AT THE MOMENT, BUT I NEED TO REVISIT THIS ONCE
-    // I HAVE MORE TIME. ONE POSSIBLE IMPLEMENTATION MODEL FOR THIS IS HERE:
-    // https://developer.apple.com/library/ios/samplecode/LazyTableImages/Introduction/Intro.html#//apple_ref/doc/uid/DTS40009394-Intro-DontLinkElementID_2
-    //
-    NSURL *imageURL = [NSURL URLWithString:pokemon.poke_image_uri];
-    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-    cell.imageView.image = [UIImage imageWithData:imageData];
+    cell.imageView.image = pokemon.poke_image;
     
     return cell;
 }
@@ -189,6 +180,7 @@
      NSString *pokemonImageURI = pokemon.poke_image_uri;
      NSUInteger pokemonID = pokemon.poke_id;
      NSArray *pokemonTypes = pokemon.poke_types;
+     UIImage *pokemonImage = pokemon.poke_image;
      
      // initialize next viewController
      PokeDexDetailViewController *vc = segue.destinationViewController;
@@ -198,6 +190,7 @@
      vc.pokemonImageURI = pokemonImageURI;
      vc.pokemonID = pokemonID;
      vc.pokemonTypes = pokemonTypes;
+     vc.pokemonImage = pokemonImage;
  }
 
 
