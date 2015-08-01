@@ -39,7 +39,7 @@ NSString *const kType = @"type";
                        kType: @[@"Grass", @"Poison"]
                        },
                      @{kName: @"Charmander",
-                       kDescription: @"Pidgey is a Flying Pokémon. Among all the Flying Pokémon, it is the gentlest and easiest to capture. A perfect target for the beginning Pokémon Trainer to test his Pokémon's skills. Pidgey's Gust power creates tornadoes. It also has a Sand-Attack.",
+                       kDescription: @"Charmander. A flame burns on the tip of its tail from birth. It is said that a Charmander dies if its flame ever goes out.",
                        kIcon: @"4.png",
                        kLargeIcon: @"4.png",
                        kType: @[@"Fire", @""]
