@@ -6,17 +6,17 @@
 //  Copyright (c) 2015 Elber Carneiro. All rights reserved.
 //
 
+#import "OrderedDictionary.h"
 #import "PokeDexDetailViewController.h"
 #import "PokeDexTableViewController.h"
-
 #import "Pokemon.h"
 #import "PokemonAPICommunicator.h"
 #import "PokemonAPIManager.h"
 
 @interface PokeDexTableViewController ()
-@property (nonatomic) NSDictionary *allPokemonAlphabetical;
-@property (nonatomic) NSDictionary *allPokemonByType;
-@property (nonatomic) NSDictionary *pokemonToDisplay;
+@property (nonatomic) OrderedDictionary *allPokemonAlphabetical;
+@property (nonatomic) OrderedDictionary *allPokemonByType;
+@property (nonatomic) OrderedDictionary *pokemonToDisplay;
 // pokemonAPIManager will handle all the communication with the API and the JSON parsing
 @property (strong, nonatomic) PokemonAPIManager *manager;
 @end
@@ -46,7 +46,7 @@
     
     // SETUP ALPHA ORDER FIRST AND LOAD IT BY DEFAULT
     
-    NSMutableDictionary *allPokemonAlphabetical = [[NSMutableDictionary alloc] init];
+    OrderedDictionary *allPokemonAlphabetical = [[OrderedDictionary alloc] init];
     [allPokemonAlphabetical setObject:allPokemon forKey:@"all"];
     self.allPokemonAlphabetical = allPokemonAlphabetical;
     NSLog(@"%@", self.allPokemonAlphabetical);
@@ -64,25 +64,28 @@
     // SETUP DICTIONARY OF POKEMON BY TYPE
     
     // get an array of all unique pokemon types
-    NSMutableOrderedSet *pokemonTypes = [[NSMutableOrderedSet alloc] init];
+    NSMutableOrderedSet *pokemonTypesOrderedSet = [[NSMutableOrderedSet alloc] init];
     for (Pokemon *p in allPokemon) {
-        [pokemonTypes addObjectsFromArray:p.poke_types];
+        [pokemonTypesOrderedSet addObjectsFromArray:p.poke_types];
     }
-    NSLog(@"%@", pokemonTypes);
+    NSArray *pokemonTypesArray = [NSArray arrayWithArray:[pokemonTypesOrderedSet array]];
+    NSArray *alphaPokemonTypes = [pokemonTypesArray sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    
+    NSLog(@"%@", alphaPokemonTypes);
     
     // create dictionary of pokemon using the types as keys
     // start with blank dictionary
-    NSMutableDictionary *allPokemonByType = [[NSMutableDictionary alloc] init];
+    OrderedDictionary *allPokemonByType = [[OrderedDictionary alloc] init];
     
     // add keys with blank arrays as values
-    for (NSString *key in pokemonTypes) {
+    for (NSString *key in alphaPokemonTypes) {
         [allPokemonByType setObject:[[NSMutableArray alloc]init] forKey:key];
     }
     
     // if a key matches a pokemon's poke_type, add the pokemon to
     // the array for the corresponding key. This means pokemon with multiple
     // types should be represented in multiple arrays
-    for (NSString *key in pokemonTypes) {
+    for (NSString *key in alphaPokemonTypes) {
         for (Pokemon *p in allPokemon) {
             for (NSString *t in p.poke_types) {
                 if ([key isEqualToString:t]) {
