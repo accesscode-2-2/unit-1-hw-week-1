@@ -21,6 +21,8 @@
 @property (strong, nonatomic) PokemonAPIManager *manager;
 @property (weak, nonatomic) IBOutlet UIView *loadingActivityView;
 @property (weak, nonatomic) IBOutlet UILabel *loadingLabel;
+@property (strong, nonatomic) IBOutlet UITableView *pokeDexTableView;
+@property (nonatomic) NSArray *pokemonIndex;
 @end
 
 @implementation PokeDexTableViewController
@@ -39,20 +41,15 @@
     [self.manager fetchAllPokemon];
 }
 
+#pragma mark - Table view data source
+
 // if data is successfully fetched, load it into the tableview
 - (void)didReceiveAllPokemon:(NSArray *)allPokemon {
     
-    // right now I have the data sorted into two different dictionaries. It may be
-    // useful to implement an index to the tableview.
-    // See: http://benedictcohen.co.uk/blog/archives/230
-    
     // SETUP ALPHA ORDER FIRST AND LOAD IT BY DEFAULT
-    
-    OrderedDictionary *allPokemonAlphabetical = [[OrderedDictionary alloc] init];
-    [allPokemonAlphabetical setObject:allPokemon forKey:@"all"];
-    self.allPokemonAlphabetical = allPokemonAlphabetical;
-    NSLog(@"%@", self.allPokemonAlphabetical);
-    self.pokemonToDisplay = self.allPokemonAlphabetical;
+    self.pokemonIndex = [[UILocalizedIndexedCollation currentCollation] sectionIndexTitles];
+    NSLog(@"%@", self.pokemonIndex);
+    self.pokemonToDisplay = [self setupAllPokemonAlphabetical:allPokemon];
     
     // this ensures that as soon as we get the data, the table reloads. If you instead
     // only call the reloadData method without wrapping it in a dispatch_async block,
@@ -66,9 +63,36 @@
         [self.tableView reloadData];
     });
     
-    
     // SETUP DICTIONARY OF POKEMON BY TYPE
+    [self setupAllPokemonByType:allPokemon];
     
+}
+
+// if the data is not fetched log the error
+- (void)fetchingAllPokemonFailedWithError:(NSError *)error {
+    NSLog(@"Error %@, %@", error, [error localizedDescription]);
+}
+
+- (OrderedDictionary *)setupAllPokemonAlphabetical:(NSArray *)allPokemon {
+    OrderedDictionary *allPokemonAlphabetical = [[OrderedDictionary alloc] init];
+    for (NSString *key in self.pokemonIndex) {
+        NSMutableArray *pokemonForOneLetter = [[NSMutableArray alloc] init];
+        for (Pokemon *p in allPokemon) {
+            NSString *firstCharacter = [NSString stringWithFormat:@"%c", [p.poke_name characterAtIndex:0]];
+            if ([key isEqualToString:firstCharacter]) {
+                [pokemonForOneLetter addObject:p];
+            }
+        }
+        if ([pokemonForOneLetter count] > 0) {
+            [allPokemonAlphabetical setObject:pokemonForOneLetter forKey:key];
+        }
+    }
+    self.allPokemonAlphabetical = allPokemonAlphabetical;
+    NSLog(@"%@", self.allPokemonAlphabetical);
+    return self.allPokemonAlphabetical;
+}
+
+- (OrderedDictionary *)setupAllPokemonByType:(NSArray *)allPokemon {
     // get an array of all unique pokemon types
     NSMutableOrderedSet *pokemonTypesOrderedSet = [[NSMutableOrderedSet alloc] init];
     for (Pokemon *p in allPokemon) {
@@ -102,29 +126,14 @@
     }
     self.allPokemonByType = allPokemonByType;
     NSLog(@"%@", self.allPokemonByType);
-
+    return self.allPokemonByType;
 }
 
-// if the data is not fetched log the error
-- (void)fetchingAllPokemonFailedWithError:(NSError *)error {
-    NSLog(@"Error %@, %@", error, [error localizedDescription]);
+// Returns localized a-z array for index titles
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    return self.pokemonIndex;
 }
 
-// method to change sorting
-- (IBAction)segmentedControlTapped:(id)sender {
-    if (self.segmentedSortControl.selectedSegmentIndex == 0) {
-        self.pokemonToDisplay = self.allPokemonAlphabetical;
-        [self.tableView reloadData];
-    } else {
-        self.pokemonToDisplay = self.allPokemonByType;
-        [self.tableView reloadData];
-    }
-}
-
-
-#pragma mark - Table view data source
-
-// only one section for now. Might change this later depending on the sorting options I add
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     NSArray *sections = [self.pokemonToDisplay allKeys];
@@ -138,7 +147,6 @@
     NSArray *pokemonInSection = self.pokemonToDisplay[key];
     return pokemonInSection.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -166,8 +174,28 @@
     return key;
 }
 
+// method to connect index titles to section titles
+- (NSInteger)tableView:(UITableView *)tableView
+sectionForSectionIndexTitle:(NSString *)title
+               atIndex:(NSInteger)index {
+    return [[UILocalizedIndexedCollation currentCollation] sectionForSectionIndexTitleAtIndex:index];
+}
+
 
  #pragma mark - Navigation
+
+// method to change sorting
+- (IBAction)segmentedControlTapped:(id)sender {
+    if (self.segmentedSortControl.selectedSegmentIndex == 0) {
+        self.pokemonIndex = [[UILocalizedIndexedCollation currentCollation] sectionIndexTitles];
+        self.pokemonToDisplay = self.allPokemonAlphabetical;
+        [self.tableView reloadData];
+    } else {
+        self.pokemonIndex = nil;
+        self.pokemonToDisplay = self.allPokemonByType;
+        [self.tableView reloadData];
+    }
+}
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

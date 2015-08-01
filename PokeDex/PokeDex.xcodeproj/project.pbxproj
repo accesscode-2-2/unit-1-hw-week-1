@@ -103,7 +103,6 @@
 			children = (
 				3BB2E7D31B68F31E00D2F9DA /* AppDelegate.h */,
 				3BB2E7D41B68F31E00D2F9DA /* AppDelegate.m */,
-				3BB2E7D91B68F31E00D2F9DA /* Main.storyboard */,
 				3BB2E87C1B6C880A00D2F9DA /* OrderedDictionary.h */,
 				3BB2E87D1B6C880A00D2F9DA /* OrderedDictionary.m */,
 				3BB2E7F51B68F3DD00D2F9DA /* PokeDexTableViewController.h */,
@@ -120,6 +119,7 @@
 				3BB2E8081B6900DC00D2F9DA /* PokemonAPIManager.h */,
 				3BB2E8091B6900DC00D2F9DA /* PokemonAPIManager.m */,
 				3BB2E80B1B69010600D2F9DA /* PokemonAPIManagerDelegate.h */,
+				3BB2E7D91B68F31E00D2F9DA /* Main.storyboard */,
 				3BB2E7DC1B68F31E00D2F9DA /* Images.xcassets */,
 				3BB2E7DE1B68F31E00D2F9DA /* LaunchScreen.xib */,
 				3BB2E7CF1B68F31E00D2F9DA /* Supporting Files */,
