@@ -46,7 +46,6 @@
     [allPokemonAlphabetical setObject:allPokemon forKey:@"all"];
     self.allPokemonAlphabetical = allPokemonAlphabetical;
     NSLog(@"%@", self.allPokemonAlphabetical);
-    
     self.pokemonToDisplay = self.allPokemonAlphabetical;
     
     // this ensures that as soon as we get the data, the table reloads. If you instead
@@ -63,10 +62,7 @@
     // get an array of all unique pokemon types
     NSMutableOrderedSet *pokemonTypes = [[NSMutableOrderedSet alloc] init];
     for (Pokemon *p in allPokemon) {
-        // there might be an nsmutableorderedset method that would eliminate need for this for loop
-        for (NSString *t in p.poke_types) {
-            [pokemonTypes addObject:t];
-        }
+        [pokemonTypes addObjectsFromArray:p.poke_types];
     }
     NSLog(@"%@", pokemonTypes);
     
@@ -93,7 +89,6 @@
     }
     self.allPokemonByType = allPokemonByType;
     NSLog(@"%@", self.allPokemonByType);
-
 
 }
 
