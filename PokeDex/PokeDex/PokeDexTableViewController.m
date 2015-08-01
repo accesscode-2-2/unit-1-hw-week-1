@@ -40,6 +40,10 @@
 // if data is successfully fetched, load it into the tableview
 - (void)didReceiveAllPokemon:(NSArray *)allPokemon {
     
+    // right now I have the data sorted into two different dictionaries. It may be
+    // useful to implement an index to the tableview.
+    // See: http://benedictcohen.co.uk/blog/archives/230
+    
     // SETUP ALPHA ORDER FIRST AND LOAD IT BY DEFAULT
     
     NSMutableDictionary *allPokemonAlphabetical = [[NSMutableDictionary alloc] init];
