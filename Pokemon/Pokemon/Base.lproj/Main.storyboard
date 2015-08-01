@@ -50,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="424" y="260"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="URt-0C-4Iz">
             <objects>
-                <viewController id="lzM-rc-gUp" sceneMemberID="viewController">
+                <viewController id="lzM-rc-gUp" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4y5-cm-JBH"/>
                         <viewControllerLayoutGuide type="bottom" id="Psb-iJ-cvN"/>
@@ -65,7 +65,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="asB-ka-oEW">
                                 <rect key="frame" x="0.0" y="44" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="ULm-Mk-8kP">
+                                    <navigationItem id="ULm-Mk-8kP">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="Aiu-GZ-rDz"/>
                                     </navigationItem>
                                 </items>
@@ -111,6 +111,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="ds0-Ra-QF5" id="pLb-JN-cNE"/>
+                        <outlet property="label" destination="Yv1-VS-2eq" id="wHc-XD-WDb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPz-9Z-Tmn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

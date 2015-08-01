@@ -7,6 +7,7 @@
 //
 
 #import "PokemonTableViewController.h"
+#import "DetailViewController.h"
 
 @interface PokemonTableViewController ()
 
@@ -445,7 +446,19 @@ PokemonTableViewController
     return nil;
     
 }
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
+    //get indexPath
+    NSIndexPath *index = [self.tableView indexPathForSelectedRow];
+    
+    //store information from NSArray into row
+    //NSString *pk = [self.pokemonArray objectAtIndex: index.row];
+    
+}
+
+
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
