@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PokeDexTableViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedSortControl;
 
 @end

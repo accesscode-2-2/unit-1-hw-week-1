@@ -24,7 +24,7 @@
                                         <segment title="By Type"/>
                                     </segments>
                                     <connections>
-                                        <action selector="switchSort:" destination="ZIl-EL-3Jz" eventType="valueChanged" id="OVn-Ah-g43"/>
+                                        <action selector="segmentedControlTapped:" destination="ZIl-EL-3Jz" eventType="valueChanged" id="eWw-o9-ITQ"/>
                                     </connections>
                                 </segmentedControl>
                             </subviews>
@@ -52,7 +52,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="PokeDex" id="j1o-CQ-fLH" userLabel="PokeDex"/>
                     <connections>
-                        <outlet property="segmentedSortControl" destination="qmE-3k-eo0" id="pVT-cK-Cds"/>
+                        <outlet property="segmentedSortControl" destination="eDh-lE-tQj" id="Ayd-0Z-YSD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8b-4D-JcI" userLabel="First Responder" sceneMemberID="firstResponder"/>

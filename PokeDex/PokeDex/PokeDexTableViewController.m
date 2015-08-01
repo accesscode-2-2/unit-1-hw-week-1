@@ -14,13 +14,15 @@
 #import "PokemonAPIManager.h"
 
 @interface PokeDexTableViewController ()
-@property (nonatomic) NSArray *allPokemon;
+@property (nonatomic) NSDictionary *allPokemonAlphabetical;
+@property (nonatomic) NSDictionary *allPokemonByType;
+@property (nonatomic) NSDictionary *pokemonToDisplay;
 // pokemonAPIManager will handle all the communication with the API and the JSON parsing
 @property (strong, nonatomic) PokemonAPIManager *manager;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *segmentedSortControl;
 @end
 
 @implementation PokeDexTableViewController
+@synthesize segmentedSortControl;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,7 +39,15 @@
 
 // if data is successfully fetched, load it into the tableview
 - (void)didReceiveAllPokemon:(NSArray *)allPokemon {
-    self.allPokemon = allPokemon;
+    
+    // SETUP ALPHA ORDER FIRST AND LOAD IT BY DEFAULT
+    
+    NSMutableDictionary *allPokemonAlphabetical = [[NSMutableDictionary alloc] init];
+    [allPokemonAlphabetical setObject:allPokemon forKey:@"all"];
+    self.allPokemonAlphabetical = allPokemonAlphabetical;
+    NSLog(@"%@", self.allPokemonAlphabetical);
+    
+    self.pokemonToDisplay = self.allPokemonAlphabetical;
     
     // this ensures that as soon as we get the data, the table reloads. If you instead
     // only call the reloadData method without wrapping it in a dispatch_async block,
@@ -46,28 +56,74 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
-}
+    
+    
+    // SETUP DICTIONARY OF POKEMON BY TYPE
+    
+    // get an array of all unique pokemon types
+    NSMutableOrderedSet *pokemonTypes = [[NSMutableOrderedSet alloc] init];
+    for (Pokemon *p in allPokemon) {
+        // there might be an nsmutableorderedset method that would eliminate need for this for loop
+        for (NSString *t in p.poke_types) {
+            [pokemonTypes addObject:t];
+        }
+    }
+    NSLog(@"%@", pokemonTypes);
+    
+    // create dictionary of pokemon using the types as keys
+    // start with blank dictionary
+    NSMutableDictionary *allPokemonByType = [[NSMutableDictionary alloc] init];
+    
+    // add keys with blank arrays as values
+    for (NSString *key in pokemonTypes) {
+        [allPokemonByType setObject:[[NSMutableArray alloc]init] forKey:key];
+    }
+    
+    // if a key matches a pokemon's poke_type, add the pokemon to
+    // the array for the corresponding key. This means pokemon with multiple
+    // types should be represented in multiple arrays
+    for (NSString *key in pokemonTypes) {
+        for (Pokemon *p in allPokemon) {
+            for (NSString *t in p.poke_types) {
+                if ([key isEqualToString:t]) {
+                    [allPokemonByType[key] addObject:p];
+                }
+            }
+        }
+    }
+    self.allPokemonByType = allPokemonByType;
+    NSLog(@"%@", self.allPokemonByType);
 
-//- (IBAction)switchSort:(id)sender {
-//    if (self.segmentedSortControl.)
-//}
+
+}
 
 // if the data is not fetched log the error
 - (void)fetchingAllPokemonFailedWithError:(NSError *)error {
     NSLog(@"Error %@, %@", error, [error localizedDescription]);
 }
 
+//- (IBAction)segmentedControlTapped:(id)sender {
+//    if (self.segmentedSortControl.selectedSegmentIndex == 0) {
+//        
+//    }
+//}
+
+
 #pragma mark - Table view data source
 
 // only one section for now. Might change this later depending on the sorting options I add
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 1;
+    NSArray *sections = [self.pokemonToDisplay allKeys];
+    return sections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return self.allPokemon.count;
+    NSArray *keys = [self.pokemonToDisplay allKeys];
+    NSString *key = keys[section];
+    NSArray *pokemonInSection = self.pokemonToDisplay[key];
+    return pokemonInSection.count;
 }
 
 
@@ -75,7 +131,10 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pokemonCell" forIndexPath:indexPath];
     
-    Pokemon *pokemon = self.allPokemon[indexPath.row];
+    NSArray *keys = [self.pokemonToDisplay allKeys];
+    NSString *key = keys[indexPath.section];
+    NSArray *pokemonInSection = self.pokemonToDisplay[key];
+    Pokemon *pokemon = pokemonInSection[indexPath.row];
     
     // setup text
     cell.textLabel.text = pokemon.poke_name;
@@ -100,7 +159,10 @@
      NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
      
      // get the pokemon whose info we will render
-     Pokemon *pokemon = self.allPokemon[indexPath.row];
+     NSArray *keys = [self.pokemonToDisplay allKeys];
+     NSString *key = keys[indexPath.section];
+     NSArray *pokemonInSection = self.pokemonToDisplay[key];
+     Pokemon *pokemon = pokemonInSection[indexPath.row];
      
      // get the pokemon info
      NSString *pokemonName = pokemon.poke_name;
