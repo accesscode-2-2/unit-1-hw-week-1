@@ -12,6 +12,7 @@
 #import "Pokemon.h"
 #import "PokemonAPICommunicator.h"
 #import "PokemonAPIManager.h"
+#import "PokemonOrderedDictionaryBuilder.h"
 
 @interface PokeDexTableViewController ()
 @property (nonatomic) OrderedDictionary *allPokemonAlphabetical;
@@ -45,12 +46,19 @@
 
 // if data is successfully fetched, load it into the tableview
 - (void)didReceiveAllPokemon:(NSArray *)allPokemon {
+    PokemonOrderedDictionaryBuilder *ODB = [[PokemonOrderedDictionaryBuilder alloc] init];
     
     // SETUP ALPHA ORDER FIRST AND LOAD IT BY DEFAULT
     self.pokemonIndex = [[UILocalizedIndexedCollation currentCollation] sectionIndexTitles];
     NSLog(@"%@", self.pokemonIndex);
-    self.pokemonToDisplay = [self setupAllPokemonAlphabetical:allPokemon];
+    self.allPokemonAlphabetical = [ODB setupAllPokemonAlphabetical:allPokemon
+                                                        withIndex:self.pokemonIndex];
+    self.pokemonToDisplay = self.allPokemonAlphabetical;
     
+    // SETUP DICTIONARY OF POKEMON BY TYPE
+    self.allPokemonByType = [ODB setupAllPokemonByType:allPokemon];
+    
+    // LOAD DATA
     // this ensures that as soon as we get the data, the table reloads. If you instead
     // only call the reloadData method without wrapping it in a dispatch_async block,
     // the user will have to tap on the tableview first before it reloads. If the
@@ -63,70 +71,11 @@
         [self.tableView reloadData];
     });
     
-    // SETUP DICTIONARY OF POKEMON BY TYPE
-    [self setupAllPokemonByType:allPokemon];
-    
 }
 
 // if the data is not fetched log the error
 - (void)fetchingAllPokemonFailedWithError:(NSError *)error {
     NSLog(@"Error %@, %@", error, [error localizedDescription]);
-}
-
-- (OrderedDictionary *)setupAllPokemonAlphabetical:(NSArray *)allPokemon {
-    OrderedDictionary *allPokemonAlphabetical = [[OrderedDictionary alloc] init];
-    for (NSString *key in self.pokemonIndex) {
-        NSMutableArray *pokemonForOneLetter = [[NSMutableArray alloc] init];
-        for (Pokemon *p in allPokemon) {
-            NSString *firstCharacter = [NSString stringWithFormat:@"%c", [p.poke_name characterAtIndex:0]];
-            if ([key isEqualToString:firstCharacter]) {
-                [pokemonForOneLetter addObject:p];
-            }
-        }
-        if ([pokemonForOneLetter count] > 0) {
-            [allPokemonAlphabetical setObject:pokemonForOneLetter forKey:key];
-        }
-    }
-    self.allPokemonAlphabetical = allPokemonAlphabetical;
-    NSLog(@"%@", self.allPokemonAlphabetical);
-    return self.allPokemonAlphabetical;
-}
-
-- (OrderedDictionary *)setupAllPokemonByType:(NSArray *)allPokemon {
-    // get an array of all unique pokemon types
-    NSMutableOrderedSet *pokemonTypesOrderedSet = [[NSMutableOrderedSet alloc] init];
-    for (Pokemon *p in allPokemon) {
-        [pokemonTypesOrderedSet addObjectsFromArray:p.poke_types];
-    }
-    NSArray *pokemonTypesArray = [NSArray arrayWithArray:[pokemonTypesOrderedSet array]];
-    NSArray *alphaPokemonTypes = [pokemonTypesArray sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-    
-    NSLog(@"%@", alphaPokemonTypes);
-    
-    // create dictionary of pokemon using the types as keys
-    // start with blank dictionary
-    OrderedDictionary *allPokemonByType = [[OrderedDictionary alloc] init];
-    
-    // add keys with blank arrays as values
-    for (NSString *key in alphaPokemonTypes) {
-        [allPokemonByType setObject:[[NSMutableArray alloc]init] forKey:key];
-    }
-    
-    // if a key matches a pokemon's poke_type, add the pokemon to
-    // the array for the corresponding key. This means pokemon with multiple
-    // types should be represented in multiple arrays
-    for (NSString *key in alphaPokemonTypes) {
-        for (Pokemon *p in allPokemon) {
-            for (NSString *t in p.poke_types) {
-                if ([key isEqualToString:t]) {
-                    [allPokemonByType[key] addObject:p];
-                }
-            }
-        }
-    }
-    self.allPokemonByType = allPokemonByType;
-    NSLog(@"%@", self.allPokemonByType);
-    return self.allPokemonByType;
 }
 
 // Returns localized a-z array for index titles

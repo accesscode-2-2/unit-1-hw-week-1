@@ -20,6 +20,7 @@
 		3BB2E80A1B6900DC00D2F9DA /* PokemonAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2E8091B6900DC00D2F9DA /* PokemonAPIManager.m */; };
 		3BB2E80E1B69170F00D2F9DA /* PokeDexDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2E80D1B69170F00D2F9DA /* PokeDexDetailViewController.m */; };
 		3BB2E87E1B6C880A00D2F9DA /* OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2E87D1B6C880A00D2F9DA /* OrderedDictionary.m */; };
+		3BB2E8871B6D240900D2F9DA /* PokemonOrderedDictionaryBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2E8861B6D240900D2F9DA /* PokemonOrderedDictionaryBuilder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		3BB2E80D1B69170F00D2F9DA /* PokeDexDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokeDexDetailViewController.m; sourceTree = "<group>"; };
 		3BB2E87C1B6C880A00D2F9DA /* OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedDictionary.h; sourceTree = "<group>"; };
 		3BB2E87D1B6C880A00D2F9DA /* OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedDictionary.m; sourceTree = "<group>"; };
+		3BB2E8851B6D240900D2F9DA /* PokemonOrderedDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokemonOrderedDictionaryBuilder.h; sourceTree = "<group>"; };
+		3BB2E8861B6D240900D2F9DA /* PokemonOrderedDictionaryBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonOrderedDictionaryBuilder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				3BB2E8081B6900DC00D2F9DA /* PokemonAPIManager.h */,
 				3BB2E8091B6900DC00D2F9DA /* PokemonAPIManager.m */,
 				3BB2E80B1B69010600D2F9DA /* PokemonAPIManagerDelegate.h */,
+				3BB2E8851B6D240900D2F9DA /* PokemonOrderedDictionaryBuilder.h */,
+				3BB2E8861B6D240900D2F9DA /* PokemonOrderedDictionaryBuilder.m */,
 				3BB2E7D91B68F31E00D2F9DA /* Main.storyboard */,
 				3BB2E7DC1B68F31E00D2F9DA /* Images.xcassets */,
 				3BB2E7DE1B68F31E00D2F9DA /* LaunchScreen.xib */,
@@ -256,6 +261,7 @@
 				3BB2E87E1B6C880A00D2F9DA /* OrderedDictionary.m in Sources */,
 				3BB2E7D51B68F31E00D2F9DA /* AppDelegate.m in Sources */,
 				3BB2E8031B68FC8E00D2F9DA /* PokemonAPICommunicator.m in Sources */,
+				3BB2E8871B6D240900D2F9DA /* PokemonOrderedDictionaryBuilder.m in Sources */,
 				3BB2E80E1B69170F00D2F9DA /* PokeDexDetailViewController.m in Sources */,
 				3BB2E80A1B6900DC00D2F9DA /* PokemonAPIManager.m in Sources */,
 				3BB2E7FA1B68F4E200D2F9DA /* Pokemon.m in Sources */,
