@@ -20,7 +20,7 @@ NSString *const kType = @"type";
     self = [super init];
     if (self) {
         //used to set up my PoKeMon dictionary
-        _library = @[@{kName: @"Bulbasaur",
+        _library = @[@{kName: @"Pikachu",
                        kDescription: @"Pikachu, the Mouse Pokémon. It can generate electric attacks from the electric pouches located in both of its cheeks.",
                        kIcon: @"25.png",
                        kLargeIcon: @"25.png",
