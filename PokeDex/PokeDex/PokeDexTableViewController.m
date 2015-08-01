@@ -140,10 +140,14 @@
     cell.textLabel.text = pokemon.poke_name;
     
     // setup image
-    // MAY NEED TO DO SOME ASYNC OPTIMIZATION HERE, OR CACHING I DUNNO. SCROLLING IS SLLLOOOOOWWW
+    // THIS IMAGE LOADING SHOULD REEEEEEALLLLY NOT BE DONE HERE! I NEED TO LOAD THESE
+    // ASYNCHRONOUSLY AND CACHE THEM SOMEWHERE? THE CORRECT IMPLEMENTATION AND MEMORY
+    // MANAGEMENT IS BEYOND MY SKILLS AT THE MOMENT, BUT I NEED TO REVISIT THIS ONCE
+    // I HAVE MORE TIME. ONE POSSIBLE IMPLEMENTATION MODEL FOR THIS IS HERE:
+    // https://developer.apple.com/library/ios/samplecode/LazyTableImages/Introduction/Intro.html#//apple_ref/doc/uid/DTS40009394-Intro-DontLinkElementID_2
+    //
     NSURL *imageURL = [NSURL URLWithString:pokemon.poke_image_uri];
     NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-
     cell.imageView.image = [UIImage imageWithData:imageData];
     
     return cell;
