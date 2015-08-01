@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1q9-uD-juQ">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="awj-9g-bFb">
+            <objects>
+                <tableViewController id="cdr-Oy-bVx" customClass="PokemonTableTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="utg-CQ-DR5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="6a3-XJ-f1T">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dZ3-dA-5tl">
+                                    <rect key="frame" x="207" y="8" width="187" height="29"/>
+                                    <segments>
+                                        <segment title="PokéNumber"/>
+                                        <segment title="Type"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="PKSegmentedControl:" destination="cdr-Oy-bVx" eventType="valueChanged" id="w1l-eD-0tC"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="centerX" secondItem="dZ3-dA-5tl" secondAttribute="centerX" id="5eY-VZ-Gb4"/>
+                                <constraint firstAttribute="centerY" secondItem="dZ3-dA-5tl" secondAttribute="centerY" id="zJJ-51-8gk"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BasicCell" textLabel="o7c-4C-9ik" style="IBUITableViewCellStyleDefault" id="Cc1-lo-peh">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cc1-lo-peh" id="IFp-pi-FnA">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o7c-4C-9ik">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="qae-lP-7xa" kind="show" id="gVz-jz-rdW"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cdr-Oy-bVx" id="fV2-un-bFN"/>
+                            <outlet property="delegate" destination="cdr-Oy-bVx" id="A2Q-Sp-h8j"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="UFf-ME-Cdf"/>
+                    <connections>
+                        <outlet property="PKSegmentedControl" destination="dZ3-dA-5tl" id="DxH-D3-gni"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7xL-VI-bgr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="260" y="257"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="CCr-JB-TIe">
+            <objects>
+                <viewController id="qae-lP-7xa" customClass="PKImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="myk-aW-uKV"/>
+                        <viewControllerLayoutGuide type="bottom" id="WRq-m7-uBB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bez-T7-WHp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IfN-vk-RqF">
+                                <rect key="frame" x="250" y="250" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="hp1-Ox-3of"/>
+                                    <constraint firstAttribute="width" constant="100" id="iZp-rn-hvP"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jih-3Y-0iH">
+                                <rect key="frame" x="279" y="370" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="IfN-vk-RqF" secondAttribute="centerX" id="5Xg-Lb-asK"/>
+                            <constraint firstItem="Jih-3Y-0iH" firstAttribute="top" secondItem="IfN-vk-RqF" secondAttribute="bottom" constant="20" id="6XN-CO-ilq"/>
+                            <constraint firstAttribute="centerY" secondItem="IfN-vk-RqF" secondAttribute="centerY" id="6gh-ud-Mcx"/>
+                            <constraint firstAttribute="centerX" secondItem="Jih-3Y-0iH" secondAttribute="centerX" id="y1L-cl-Cjg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="PokemonImageView" destination="IfN-vk-RqF" id="9GW-kv-yp8"/>
+                        <outlet property="PokemonNameLabel" destination="Jih-3Y-0iH" id="1iO-SI-ytg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qFu-4M-jRZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1014" y="177"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Sh9-2X-DZJ">
+            <objects>
+                <navigationController id="1q9-uD-juQ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jzC-1b-WIH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cdr-Oy-bVx" kind="relationship" relationship="rootViewController" id="O6D-0j-RNa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="acf-hk-00x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-560" y="257"/>
+        </scene>
+    </scenes>
+</document>
