@@ -102,11 +102,16 @@
     NSLog(@"Error %@, %@", error, [error localizedDescription]);
 }
 
-//- (IBAction)segmentedControlTapped:(id)sender {
-//    if (self.segmentedSortControl.selectedSegmentIndex == 0) {
-//        
-//    }
-//}
+// method to change sorting
+- (IBAction)segmentedControlTapped:(id)sender {
+    if (self.segmentedSortControl.selectedSegmentIndex == 0) {
+        self.pokemonToDisplay = self.allPokemonAlphabetical;
+        [self.tableView reloadData];
+    } else {
+        self.pokemonToDisplay = self.allPokemonByType;
+        [self.tableView reloadData];
+    }
+}
 
 
 #pragma mark - Table view data source
@@ -147,6 +152,15 @@
     cell.imageView.image = [UIImage imageWithData:imageData];
     
     return cell;
+}
+
+// Method to add dictionary keys as titles for each section
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    NSArray *keys = [self.pokemonToDisplay allKeys];
+    NSString *key = keys[section];
+    
+    return key;
 }
 
 
