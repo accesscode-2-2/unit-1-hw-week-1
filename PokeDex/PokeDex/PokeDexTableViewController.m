@@ -19,6 +19,8 @@
 @property (nonatomic) OrderedDictionary *pokemonToDisplay;
 // pokemonAPIManager will handle all the communication with the API and the JSON parsing
 @property (strong, nonatomic) PokemonAPIManager *manager;
+@property (weak, nonatomic) IBOutlet UIView *loadingActivityView;
+@property (weak, nonatomic) IBOutlet UILabel *loadingLabel;
 @end
 
 @implementation PokeDexTableViewController
@@ -57,6 +59,10 @@
     // the user will have to tap on the tableview first before it reloads. If the
     // user never taps the screen will look blank forever. That would be LAAAME!
     dispatch_async(dispatch_get_main_queue(), ^{
+        self.loadingLabel.alpha = 0;
+        [self.loadingActivityView removeFromSuperview];
+        self.segmentedSortControl.alpha = 1;
+        
         [self.tableView reloadData];
     });
     

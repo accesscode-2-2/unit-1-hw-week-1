@@ -17,7 +17,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eDh-lE-tQj">
+                                <segmentedControl opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eDh-lE-tQj">
                                     <rect key="frame" x="211" y="8" width="179" height="29"/>
                                     <segments>
                                         <segment title="Alphabetical"/>
@@ -27,11 +27,34 @@
                                         <action selector="segmentedControlTapped:" destination="ZIl-EL-3Jz" eventType="valueChanged" id="eWw-o9-ITQ"/>
                                     </connections>
                                 </segmentedControl>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Database" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6g-Hw-i7i">
+                                    <rect key="frame" x="223" y="10" width="154" height="23"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                    <color key="textColor" red="0.22811428459999999" green="0.63436978330000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstAttribute="centerY" secondItem="W6g-Hw-i7i" secondAttribute="centerY" id="3Qx-fc-pl5"/>
+                                <constraint firstAttribute="centerX" secondItem="W6g-Hw-i7i" secondAttribute="centerX" id="hu3-Qd-6tl"/>
                                 <constraint firstAttribute="centerX" secondItem="eDh-lE-tQj" secondAttribute="centerX" id="qGC-KZ-Hbp"/>
                                 <constraint firstAttribute="centerY" secondItem="eDh-lE-tQj" secondAttribute="centerY" id="qmE-3k-eo0"/>
+                            </constraints>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="fxT-WD-9ff" userLabel="loading">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="YJl-YD-QTb">
+                                    <rect key="frame" x="282" y="4" width="37" height="37"/>
+                                    <color key="color" red="0.22811428459999999" green="0.63436978330000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </activityIndicatorView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="centerY" secondItem="YJl-YD-QTb" secondAttribute="centerY" id="0b6-0F-Jod"/>
+                                <constraint firstAttribute="centerX" secondItem="YJl-YD-QTb" secondAttribute="centerX" id="cVp-md-wea"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -52,6 +75,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="PokeDex" id="j1o-CQ-fLH" userLabel="PokeDex"/>
                     <connections>
+                        <outlet property="loadingActivityView" destination="fxT-WD-9ff" id="gxB-rm-oGv"/>
+                        <outlet property="loadingLabel" destination="W6g-Hw-i7i" id="sIV-mr-dPE"/>
                         <outlet property="segmentedSortControl" destination="eDh-lE-tQj" id="Ayd-0Z-YSD"/>
                     </connections>
                 </tableViewController>

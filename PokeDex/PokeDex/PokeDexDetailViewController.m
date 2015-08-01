@@ -18,9 +18,7 @@
     [super viewDidLoad];
     
     self.pokemonNameLabel.text = self.pokemonName;
-    NSURL *imageURL = [NSURL URLWithString:self.pokemonImageURI];
-    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-    self.pokemonImageView.image = [UIImage imageWithData:imageData];
+    self.pokemonImageView.image = self.pokemonImage;
 
 }
 
