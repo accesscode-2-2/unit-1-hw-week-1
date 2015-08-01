@@ -10,4 +10,6 @@
 
 @interface PKPokedexTableViewController : UITableViewController
 
+-(NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView;
+
 @end

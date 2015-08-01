@@ -15,6 +15,8 @@
 @property (nonatomic) NSMutableArray *allPokemonAtoZ;
 @property (nonatomic) BOOL showAllPokemon;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
+@property (nonatomic) NSArray *pokemonIndexAtoZ;
+-(NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView;
 
 @end
 
@@ -22,6 +24,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.pokemonIndexAtoZ = @[@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z"];
+    
+    
     
     self.title = @"Ash's Pokedex";
 
@@ -360,6 +366,15 @@
     }
 }
 
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView{
+    
+    if(self.showAllPokemon){
+        return _pokemonIndexAtoZ;
+    } else {
+        return nil;
+    }
+}
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
@@ -460,6 +475,7 @@
     NSString *key = keys[section];
     return key;
     }
+
 }
 
 @end
