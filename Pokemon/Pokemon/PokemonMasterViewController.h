@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface PokemonMasterViewController : UIViewController
 
+@property (strong, nonatomic) IBOutletCollection(UIImageView ) NSArray *pokemonImageViews;
 
 @end
 
