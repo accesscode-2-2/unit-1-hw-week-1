@@ -12,8 +12,11 @@
 
 @interface PKPokemonTableTableViewController ()
 
-@property (nonatomic) NSMutableArray *pokemons;
 @property (nonatomic) NSDictionary *pokemonTypes;
+@property (nonatomic) NSMutableArray *pokemons;
+@property (nonatomic) NSArray *pokemonNames;
+@property (nonatomic) BOOL showAllPokemonsAtoZ;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 @end
 
@@ -22,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.showAllPokemonsAtoZ = NO;
+
     NSArray *pokemonNames = @[
                       @"Bulbasaur",
                       @"Ivysaur",
@@ -486,9 +491,28 @@
     //[self.pokemons sortAlphabetically];
 }
 
+- (IBAction)segmentedControlChanged:(UISegmentedControl *)sender {
+    
+    if(self.segmentedControl.selectedSegmentIndex == 0) {
+        self.showAllPokemonsAtoZ = NO;
+        [self.tableView reloadData];
+    }
+    else {
+        self.showAllPokemonsAtoZ = YES;
+        [self.tableView reloadData];
+    }
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     //asks the tableview which row was selected/tapped
     
+    if(_showAllPokemonsAtoZ == YES) {
+        NSArray *sortedArray = [self.pokemonNames sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+       // NSString *sortedArrayString = [sortedArray objectAtIndex:i];
+        PKPokemonDetailViewController *vc = segue.destinationViewController;
+        vc.pokemonName = sortedArray;
+    }
+    else {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     NSArray *keysForTypes = [self.pokemonTypes allKeys];
     NSString *keyAtARowInASection = keysForTypes[indexPath.section];
@@ -498,13 +522,22 @@
     vc.pokemonName = littlePoke;
     NSString *imageName = [littlePoke lowercaseString];
     vc.pokemonImageName = imageName;
+    }
 }
+
+
+
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSArray *types = [self.pokemonTypes allKeys];
-    return types.count;
+    if (self.showAllPokemonsAtoZ) {
+        return 1;
+    }
+    else {
+        NSArray *types = [self.pokemonTypes allKeys];
+        return types.count;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -517,6 +550,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCellIdentifier" forIndexPath:indexPath];
     
+    if (self.showAllPokemonsAtoZ) {
+        NSArray *sortedArray = [self.pokemons sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+        NSString *sortedArrayString = [sortedArray objectAtIndex:indexPath.row];
+        
+        cell.textLabel.text = sortedArrayString;
+        NSString *imageName = [sortedArrayString lowercaseString];
+        cell.imageView.image = [UIImage imageNamed:imageName];
+        return cell;
+    }
+    else {
     NSArray *types = [self.pokemonTypes allKeys];
     NSString *type = types[indexPath.section]; //NSString type is a string in an array of strings of types in a dictionary at a row.section, a loop basically
     NSArray *pokemonNamesOfPokeType = [self.pokemonTypes objectForKey:type];
@@ -526,6 +569,7 @@
     NSString *imageName = [pokemonName lowercaseString];
     cell.imageView.image = [UIImage imageNamed:imageName];
     return cell;
+    }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -533,10 +577,6 @@
     NSString *type = types[section];
     return type;
 }
-
-
-
-
 
 // hook this action to your UISegmentedControl
 - (void)segmentedControlDidChangeValue:(UISegmentedControl *)segmentedControl {
