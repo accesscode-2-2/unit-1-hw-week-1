@@ -522,16 +522,11 @@
     NSArray *pokemonNamesOfPokeType = [self.pokemonTypes objectForKey:type];
     NSString *pokemonName = [pokemonNamesOfPokeType objectAtIndex:indexPath.row];
     cell.textLabel.text = pokemonName;
+
+    NSString *imageName = [pokemonName lowercaseString];
+    cell.imageView.image = [UIImage imageNamed:imageName];
     return cell;
-
-    //I THINK THE CODE BELOW SHOULD BE CHANGED TO DISPLAY THE IMAGES IN THE ROOT VC
-//    Pokemon *pokemon = self.pokemons[indexPath.row];
-//    NSString *imageName = [pokemon.name lowercaseString];
-//    cell.textLabel.text = pokemon.name;
-//    cell.imageView.image = [UIImage imageNamed:imageName];    
-//    return cell;
 }
-
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     NSArray *types = [self.pokemonTypes allKeys];
