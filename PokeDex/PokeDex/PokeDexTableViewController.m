@@ -15,6 +15,7 @@
 #import "PokemonOrderedDictionaryBuilder.h"
 
 @interface PokeDexTableViewController ()
+
 @property (nonatomic) OrderedDictionary *allPokemonAlphabetical;
 @property (nonatomic) OrderedDictionary *allPokemonByType;
 @property (nonatomic) OrderedDictionary *pokemonToDisplay;
@@ -24,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *loadingLabel;
 @property (strong, nonatomic) IBOutlet UITableView *pokeDexTableView;
 @property (nonatomic) NSArray *pokemonIndex;
+
 @end
 
 @implementation PokeDexTableViewController

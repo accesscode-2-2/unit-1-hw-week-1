@@ -11,6 +11,7 @@
 
 @implementation PokemonOrderedDictionaryBuilder
 
+// sets up apha ordered dictionary with index keys
 - (OrderedDictionary *)setupAllPokemonAlphabetical:(NSArray *)allPokemon
                                          withIndex:(NSArray *)pokemonIndex {
     OrderedDictionary *allPokemonAlphabetical = [[OrderedDictionary alloc] init];
