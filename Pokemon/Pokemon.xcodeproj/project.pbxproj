@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29190CCB1B69ABEA00191ECB /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 29190CCA1B69ABEA00191ECB /* Pokemon.m */; };
+		296600011B69999D00EA1A4E /* PKPokemonTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 296600001B69999D00EA1A4E /* PKPokemonTableTableViewController.m */; };
+		296600041B699DCD00EA1A4E /* PKPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 296600031B699DCD00EA1A4E /* PKPokemonDetailViewController.m */; };
 		8DD0D6711B65C9200007E103 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD0D6701B65C9200007E103 /* main.m */; };
 		8DD0D6741B65C9200007E103 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD0D6731B65C9200007E103 /* AppDelegate.m */; };
-		8DD0D6771B65C9200007E103 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD0D6761B65C9200007E103 /* ViewController.m */; };
 		8DD0D67A1B65C9200007E103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DD0D6781B65C9200007E103 /* Main.storyboard */; };
 		8DD0D67C1B65C9200007E103 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DD0D67B1B65C9200007E103 /* Images.xcassets */; };
 		8DD0D67F1B65C9200007E103 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD0D67D1B65C9200007E103 /* LaunchScreen.xib */; };
@@ -27,13 +29,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29190CC91B69ABEA00191ECB /* Pokemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
+		29190CCA1B69ABEA00191ECB /* Pokemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
+		296600001B69999D00EA1A4E /* PKPokemonTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKPokemonTableTableViewController.m; sourceTree = "<group>"; };
+		296600021B699DCD00EA1A4E /* PKPokemonDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKPokemonDetailViewController.h; sourceTree = "<group>"; };
+		296600031B699DCD00EA1A4E /* PKPokemonDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKPokemonDetailViewController.m; sourceTree = "<group>"; };
+		2966FFFF1B69999D00EA1A4E /* PKPokemonTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKPokemonTableTableViewController.h; sourceTree = "<group>"; };
 		8DD0D66B1B65C9200007E103 /* Pokemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD0D66F1B65C9200007E103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DD0D6701B65C9200007E103 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8DD0D6721B65C9200007E103 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8DD0D6731B65C9200007E103 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8DD0D6751B65C9200007E103 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8DD0D6761B65C9200007E103 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8DD0D6791B65C9200007E103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8DD0D67B1B65C9200007E103 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8DD0D67E1B65C9200007E103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -81,10 +87,14 @@
 		8DD0D66D1B65C9200007E103 /* Pokemon */ = {
 			isa = PBXGroup;
 			children = (
+				29190CC91B69ABEA00191ECB /* Pokemon.h */,
+				29190CCA1B69ABEA00191ECB /* Pokemon.m */,
 				8DD0D6721B65C9200007E103 /* AppDelegate.h */,
 				8DD0D6731B65C9200007E103 /* AppDelegate.m */,
-				8DD0D6751B65C9200007E103 /* ViewController.h */,
-				8DD0D6761B65C9200007E103 /* ViewController.m */,
+				2966FFFF1B69999D00EA1A4E /* PKPokemonTableTableViewController.h */,
+				296600001B69999D00EA1A4E /* PKPokemonTableTableViewController.m */,
+				296600021B699DCD00EA1A4E /* PKPokemonDetailViewController.h */,
+				296600031B699DCD00EA1A4E /* PKPokemonDetailViewController.m */,
 				8DD0D6781B65C9200007E103 /* Main.storyboard */,
 				8DD0D67B1B65C9200007E103 /* Images.xcassets */,
 				8DD0D67D1B65C9200007E103 /* LaunchScreen.xib */,
@@ -219,8 +229,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DD0D6771B65C9200007E103 /* ViewController.m in Sources */,
+				296600041B699DCD00EA1A4E /* PKPokemonDetailViewController.m in Sources */,
+				296600011B69999D00EA1A4E /* PKPokemonTableTableViewController.m in Sources */,
 				8DD0D6741B65C9200007E103 /* AppDelegate.m in Sources */,
+				29190CCB1B69ABEA00191ECB /* Pokemon.m in Sources */,
 				8DD0D6711B65C9200007E103 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +430,7 @@
 				8DD0D6901B65C9200007E103 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8DD0D6911B65C9200007E103 /* Build configuration list for PBXNativeTarget "PokemonTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +439,7 @@
 				8DD0D6931B65C9200007E103 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
