@@ -2,7 +2,7 @@
 //  pokeDexTableViewController.m
 //  Pokemon
 //
-//  Created by Justine Gartner on 7/28/15.
+//  Created by Justine Gartner🙏🏼 on 7/28/15.
 //  Copyright (c) 2015 Mike Kavouras. All rights reserved.
 //
 
@@ -12,7 +12,6 @@
 
 @interface pokeDexTableViewController ()
 
-//@property (nonatomic) NSArray *tableData;
 @property (nonatomic) NSMutableArray *tableData;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *azTypeControlButton;
 
@@ -52,10 +51,10 @@
                             @"Raichu",
                             @"Sandshrew",
                             @"Sandslash",
-                            @"Nidoran♀",
+                            @"Nidoran (Female)",
                             @"Nidorina",
                             @"Nidoqueen",
-                            @"Nidoran♂",
+                            @"Nidoran",
                             @"Nidorino",
                             @"Nidoking",
                             @"Clefairy",
@@ -340,18 +339,15 @@
         pokemon.name = pokemon151[i];
         //give it a type according to the types array
         pokemon.type = types[i];
-        //create a string to represent the lowercase string of the pokemon151
-        NSString *lowercaseName = [pokemon151[i] lowercaseString];
-        //create a string to represent farfetchd (from Farfetch'd)
-        NSString *pokeImageName = [lowercaseName stringByReplacingOccurrencesOfString:@"'" withString:@""];
+        
+        //Created a method to connect image file name to string name in Pokemon class
+        NSString *pokeImageName = [pokemon createImageNameWith: pokemon151[i]];
+        
         //give it an image by matching the string created above from the pokemon151
         pokemon.image = pokeImageName;
         //add the instance to the new pokemons mutable array
         [pokemons addObject:pokemon];
     }
-    
-    //I originally used the below to sort the pokemon151 array alphabetically
-    //NSArray *sortedPokemon151 = [pokemon151 sortedArrayUsingSelector: @selector(caseInsensitiveCompare:)];
 
     //fill the tableData array with the pokemons
     self.tableData = [NSMutableArray arrayWithArray:pokemons];
@@ -367,18 +363,19 @@
     //create an instance of indexPath for the table view...??...REVIEW
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     
-    //Create a string to represent the pokeName, from the tableData array at each index path row
-    NSString *pokeName = self.tableData [indexPath.row];
+    //Create a string to represent the pokeName, from an instance of Pokemon in the tableData array at each index path row
     
-    //All the steps below represent the pokeImageName (Should create a method for this!)
-    NSString *lowercaseName = [pokeName lowercaseString];
-    NSString *pokeImageName = [lowercaseName stringByReplacingOccurrencesOfString:@"'" withString:@""];
+    Pokemon *pokemon = self.tableData [indexPath.row];
+    NSString *pokeName = pokemon.name;
+    
+    NSString *pokeImageName = [pokemon createImageNameWith: pokeName];
     
     //create an instance of the pokeDexViewController in segue to set the pokeName & PokeImageName
     pokeDexViewController *vc = segue.destinationViewController;
     
     //pokeLabelName is a property of the pokeDexViewController(.h), getter/setter
     vc.pokeLabelName = pokeName;
+    
     //pokeImage is also a property of the pokeDexViewController(.h), getter/setter
     vc.pokeImage = [UIImage imageNamed:pokeImageName];
     
@@ -386,23 +383,27 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
     if (self.azTypeControlButton.selectedSegmentIndex == 0) {
+        
         return 1;
+    
     } else {
-        // return the number of types from Pokemon class implementation method "numberOfTypes"
         
         return [Pokemon numberOfTypes:self.tableData];
     }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     if (self.azTypeControlButton.selectedSegmentIndex == 0) {
+        
         return self.tableData.count;
+    
     } else {
-        // the number of pokemon of the type that corresponds to this section
+        
+        return [Pokemon numberOfPokemonOfEachType:self.tableData];
     }
-
-    return self.tableData.count;
 }
 
 
@@ -411,14 +412,33 @@
     
     Pokemon *pokemon = self.tableData [indexPath.row];
     
-    NSString *lowercaseName = [pokemon.name lowercaseString];
-    NSString *pokeImageName = [lowercaseName stringByReplacingOccurrencesOfString:@"'" withString:@""];
+    NSString *pokeImageName = [pokemon createImageNameWith: pokemon.name];
     
     cell.imageView.image = [UIImage imageNamed:pokeImageName];
     
     cell.textLabel.text = pokemon.name;
     
     return cell;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    if (self.azTypeControlButton.selectedSegmentIndex == 1){
+        
+        //similar to the numberOfTypes method we created in Pokemon.m
+        
+        NSMutableArray *types = [NSMutableArray new];
+        for(Pokemon *pk in self.tableData){
+            
+            if ([types indexOfObject:pk.type] == NSNotFound) {
+                [types addObject:pk.type];
+            }
+        }
+        
+        return types[section];
+    }
+    
+    return nil;
 }
 
 - (void)sortTableDataArrayByName {

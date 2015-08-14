@@ -14,6 +14,10 @@
 @property (nonatomic, strong) NSString *type;
 @property (nonatomic, strong) NSString *image;
 
+-(NSString *)createImageNameWith: (NSString *)pokemonName;
+
 + (NSInteger)numberOfTypes:(NSArray *)pokemon;
+
++ (NSInteger)numberOfPokemonOfEachType:(NSArray *)pokemon;
 
 @end
