@@ -7,7 +7,7 @@
 //
 
 #import "PokedexTableViewController.h"
-#import "DetailPokedexTableViewController.h"
+#import "DetailPokedexViewController.h"
 
 @interface PokedexTableViewController ()
 
@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationItem.title = @"Pokemon";
     self.pokemons = @{
                       @"Bug" : @[
                               @"Beedrill",
@@ -293,10 +293,6 @@
 
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Table view data source
 
@@ -322,8 +318,9 @@
     NSString *type = types[indexPath.section];
     NSArray *arrayOfPokemons = [self.pokemons objectForKey:type];
     NSString *pokemonName = [arrayOfPokemons objectAtIndex:indexPath.row];
+    NSString *imageName = pokemonName.lowercaseString;
     cell.textLabel.text = pokemonName;
-    
+    cell.imageView.image = [UIImage imageNamed:imageName];
     return cell;
 }
 
@@ -333,48 +330,15 @@
     return type;
     
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    UITableViewCell *cell = sender;
+    
+    DetailPokedexViewController *viewController = [segue destinationViewController];
+    viewController.pokemonName = cell.textLabel.text;
+    viewController.pokemonPhoto = cell.imageView.image;
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

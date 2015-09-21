@@ -14,7 +14,7 @@
 		8DD0D67F1B65C9200007E103 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD0D67D1B65C9200007E103 /* LaunchScreen.xib */; };
 		8DD0D68B1B65C9200007E103 /* PokemonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD0D68A1B65C9200007E103 /* PokemonTests.m */; };
 		D415ABBB1B6B04860049FA3F /* PokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D415ABBA1B6B04860049FA3F /* PokedexTableViewController.m */; };
-		D415ABBE1B6B055C0049FA3F /* DetailPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D415ABBD1B6B055C0049FA3F /* DetailPokedexTableViewController.m */; };
+		D415FA671BAFBA2E002BD7EA /* DetailPokedexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D415FA661BAFBA2E002BD7EA /* DetailPokedexViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +41,8 @@
 		8DD0D68A1B65C9200007E103 /* PokemonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonTests.m; sourceTree = "<group>"; };
 		D415ABB91B6B04860049FA3F /* PokedexTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokedexTableViewController.h; sourceTree = "<group>"; };
 		D415ABBA1B6B04860049FA3F /* PokedexTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokedexTableViewController.m; sourceTree = "<group>"; };
-		D415ABBC1B6B055C0049FA3F /* DetailPokedexTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPokedexTableViewController.h; sourceTree = "<group>"; };
-		D415ABBD1B6B055C0049FA3F /* DetailPokedexTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPokedexTableViewController.m; sourceTree = "<group>"; };
+		D415FA651BAFBA2E002BD7EA /* DetailPokedexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPokedexViewController.h; sourceTree = "<group>"; };
+		D415FA661BAFBA2E002BD7EA /* DetailPokedexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPokedexViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,10 +86,10 @@
 			children = (
 				8DD0D6721B65C9200007E103 /* AppDelegate.h */,
 				8DD0D6731B65C9200007E103 /* AppDelegate.m */,
-				D415ABBC1B6B055C0049FA3F /* DetailPokedexTableViewController.h */,
-				D415ABBD1B6B055C0049FA3F /* DetailPokedexTableViewController.m */,
 				D415ABB91B6B04860049FA3F /* PokedexTableViewController.h */,
 				D415ABBA1B6B04860049FA3F /* PokedexTableViewController.m */,
+				D415FA651BAFBA2E002BD7EA /* DetailPokedexViewController.h */,
+				D415FA661BAFBA2E002BD7EA /* DetailPokedexViewController.m */,
 				8DD0D6781B65C9200007E103 /* Main.storyboard */,
 				8DD0D67B1B65C9200007E103 /* Images.xcassets */,
 				8DD0D67D1B65C9200007E103 /* LaunchScreen.xib */,
@@ -168,7 +168,7 @@
 		8DD0D6631B65C9200007E103 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Mike Kavouras";
 				TargetAttributes = {
 					8DD0D66A1B65C9200007E103 = {
@@ -226,8 +226,8 @@
 			files = (
 				8DD0D6741B65C9200007E103 /* AppDelegate.m in Sources */,
 				D415ABBB1B6B04860049FA3F /* PokedexTableViewController.m in Sources */,
+				D415FA671BAFBA2E002BD7EA /* DetailPokedexViewController.m in Sources */,
 				8DD0D6711B65C9200007E103 /* main.m in Sources */,
-				D415ABBE1B6B055C0049FA3F /* DetailPokedexTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +290,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -356,6 +357,7 @@
 				INFOPLIST_FILE = Pokemon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mikekavouras.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -367,6 +369,7 @@
 				INFOPLIST_FILE = Pokemon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mikekavouras.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -385,6 +388,7 @@
 				);
 				INFOPLIST_FILE = PokemonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mikekavouras.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pokemon.app/Pokemon";
 			};
@@ -400,6 +404,7 @@
 				);
 				INFOPLIST_FILE = PokemonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mikekavouras.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pokemon.app/Pokemon";
 			};

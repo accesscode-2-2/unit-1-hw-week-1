@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lGb-UH-2OC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lGb-UH-2OC">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -14,11 +15,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pokedexIdentifier" textLabel="rRR-70-wPo" style="IBUITableViewCellStyleDefault" id="S1V-FE-QV1">
+                                <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S1V-FE-QV1" id="V2E-ym-iKv">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rRR-70-wPo">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -29,18 +33,6 @@
                                 <connections>
                                     <segue destination="Mtd-Dv-DSy" kind="show" id="sQh-44-l0D"/>
                                 </connections>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LD6-wX-Hac">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LD6-wX-Hac" id="MVy-2o-FJI">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MMs-7c-2vs">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MMs-7c-2vs" id="ofW-hn-Gxl">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -55,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="119" y="322"/>
         </scene>
-        <!--Detail Pokedex Table View Controller-->
+        <!--Detail Pokedex View Controller-->
         <scene sceneID="Lx7-f7-IbE">
             <objects>
-                <viewController id="Mtd-Dv-DSy" customClass="DetailPokedexTableViewController" sceneMemberID="viewController">
+                <viewController id="Mtd-Dv-DSy" customClass="DetailPokedexViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s1v-E5-ppa"/>
                         <viewControllerLayoutGuide type="bottom" id="2gw-XL-87h"/>
@@ -67,17 +59,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XN-2B-QhL">
-                                <rect key="frame" x="279" y="153" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XN-2B-QhL">
+                                <rect key="frame" x="279" y="93" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h2z-JC-M7t">
+                                <rect key="frame" x="200" y="179" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Nns-17-DBF"/>
+                                    <constraint firstAttribute="height" constant="200" id="PsX-au-1wU"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h2z-JC-M7t" firstAttribute="centerX" secondItem="DcT-s0-Qrz" secondAttribute="centerX" id="Q3y-0l-kSf"/>
+                            <constraint firstItem="7XN-2B-QhL" firstAttribute="top" secondItem="s1v-E5-ppa" secondAttribute="bottom" constant="29" id="g17-PE-dvf"/>
+                            <constraint firstItem="h2z-JC-M7t" firstAttribute="top" secondItem="7XN-2B-QhL" secondAttribute="bottom" constant="65" id="lHP-mg-xB7"/>
+                            <constraint firstItem="7XN-2B-QhL" firstAttribute="centerX" secondItem="DcT-s0-Qrz" secondAttribute="centerX" id="wbY-9e-idv"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="detailTextLabel" destination="7XN-2B-QhL" id="1Rm-Q1-i2M"/>
+                        <outlet property="pokemonImageView" destination="h2z-JC-M7t" id="8D5-4e-Df3"/>
+                        <outlet property="pokemonNameLabel" destination="7XN-2B-QhL" id="fqz-C3-Zei"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vEx-fh-aDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
