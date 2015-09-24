@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
+	//getting the image by matching the name
 	self.nameLabel.text = self.pokemonName;
 	NSString *imageName = [self.pokemonName lowercaseString];
 	self.imageView.image = [UIImage imageNamed:imageName];
