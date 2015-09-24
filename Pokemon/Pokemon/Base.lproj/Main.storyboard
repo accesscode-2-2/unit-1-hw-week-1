@@ -26,7 +26,7 @@
                             </connections>
                         </segmentedControl>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" textLabel="kby-JY-sTg" style="IBUITableViewCellStyleDefault" id="L5a-94-vRJ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellIdentifier" textLabel="kby-JY-sTg" style="IBUITableViewCellStyleDefault" id="L5a-94-vRJ">
                                 <rect key="frame" x="0.0" y="121" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L5a-94-vRJ" id="6CQ-Fm-kGq">

@@ -10,6 +10,10 @@
 
 @implementation PokeData
 
+- (void)initializeData{
+	[self initializeTypeDictionary];
+	[self initializeAlphaPokemon];
+}
 
 - (void) initializeAlphaPokemon{
 NSArray *allPokemon = @[

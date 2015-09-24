@@ -21,6 +21,7 @@
 	//initialize data
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	
 	self.model = [[PokeData alloc] init];
 	[self.model initializeData];
 	
@@ -55,9 +56,9 @@
 	}
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:  (NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath: (NSIndexPath *)indexPath
 {
-	//static NSString *CellIdentifier = @"cellIdentifier";
+	//copy and paste the identifier. You make this mistake 9 times out of 10
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
 	
 	NSArray *currentSection = [self.model.typePokemon.allKeys objectAtIndex: indexPath.section];
