@@ -21,6 +21,9 @@
                                 <segment title="A - Z"/>
                                 <segment title="TYPE"/>
                             </segments>
+                            <connections>
+                                <action selector="segmentedConrolTapped:" destination="l3G-oV-lcy" eventType="valueChanged" id="SrE-V3-4hF"/>
+                            </connections>
                         </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" textLabel="kby-JY-sTg" style="IBUITableViewCellStyleDefault" id="L5a-94-vRJ">
@@ -52,6 +55,7 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="0s5-wy-p1W"/>
                     <connections>
                         <outlet property="PokemonTableView" destination="pY8-T3-Vdm" id="YTe-Xh-M3A"/>
+                        <outlet property="segmentedControl" destination="FGD-qz-sX9" id="UmB-w1-8li"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7n1-YY-UQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>

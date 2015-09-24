@@ -11,8 +11,6 @@
 
 @interface PokemonViewController : UITableViewController
 @property (strong, nonatomic) IBOutlet UITableView *PokemonTableView;
-@property (nonatomic) NSDictionary *pokemon; //pokemon type dict in .m
-@property (nonatomic) NSArray	*aToZPokemon;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+
 
 @end

@@ -19,4 +19,14 @@
 
 @implementation PokemonDetailViewController
 
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	
+	self.nameLabel.text = self.pokemonName;
+	NSString *imageName = [self.pokemonName lowercaseString];
+	self.imageView.image = [UIImage imageNamed:imageName];
+	self.navigationItem.title = self.pokemonName;
+	
+}
+
 @end
