@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Pokemons.h"
 
 @interface PokemonDetailViewController : UIViewController
 
-@property (nonatomic) Pokemons *pokemon;
+@property (nonatomic) NSString *pokemonName;
+@property (nonatomic) UIImage *pokemonPhoto;
 
 @end
