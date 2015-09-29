@@ -100,7 +100,8 @@
                         @"froakie",
                         @"frogadier",
                         @"clauncher",
-                        @"clawitzer"
+                        @"clawitzer",
+                        @"nope"
                         ];
     
     NSArray *grass = @[ @"scyther",
