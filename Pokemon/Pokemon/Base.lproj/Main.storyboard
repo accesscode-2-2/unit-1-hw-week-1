@@ -1,34 +1,112 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cfy-Al-nBn">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
     </dependencies>
     <scenes>
-        <!--Pokemon Table View Controller-->
-        <scene sceneID="axj-YO-Srn">
+        <!--Navigation Controller-->
+        <scene sceneID="2VF-R7-wsO">
             <objects>
-                <tableViewController id="LMr-pW-jfn" customClass="PokemonTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hNJ-5L-ciH">
+                <navigationController id="cfy-Al-nBn" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Ph-5n-iMO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="L4P-RO-tXN" kind="relationship" relationship="rootViewController" id="MyE-Ao-7mV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cpl-0V-loJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-317" y="189"/>
+        </scene>
+        <!--Pokemon Detail View Controller-->
+        <scene sceneID="CN0-oA-R8i">
+            <objects>
+                <viewController id="N5G-Zq-ZCL" customClass="PokemonDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MYO-UR-A33"/>
+                        <viewControllerLayoutGuide type="bottom" id="37v-hh-d9H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NcJ-zb-0uM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eM-VS-5Jw">
+                                <rect key="frame" x="279" y="160" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lkb-qZ-sc2">
+                                <rect key="frame" x="225" y="225" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="B4s-JM-qqa"/>
+                                    <constraint firstAttribute="width" constant="150" id="tqk-nu-PSX"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lkb-qZ-sc2" firstAttribute="top" secondItem="3eM-VS-5Jw" secondAttribute="bottom" constant="44" id="NjY-fx-dot"/>
+                            <constraint firstItem="Lkb-qZ-sc2" firstAttribute="centerX" secondItem="NcJ-zb-0uM" secondAttribute="centerX" id="S7M-QT-2dk"/>
+                            <constraint firstItem="3eM-VS-5Jw" firstAttribute="centerX" secondItem="NcJ-zb-0uM" secondAttribute="centerX" id="YBJ-Ls-Beb"/>
+                            <constraint firstItem="Lkb-qZ-sc2" firstAttribute="centerY" secondItem="NcJ-zb-0uM" secondAttribute="centerY" id="p0k-Rb-URp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pokemonImage" destination="Lkb-qZ-sc2" id="Hlb-SW-06L"/>
+                        <outlet property="pokemonNameLabel" destination="3eM-VS-5Jw" id="3fM-WF-Z7G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uSd-VC-Frz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="952" y="189"/>
+        </scene>
+        <!--Poke Dex Table View Controller-->
+        <scene sceneID="peK-ye-d30">
+            <objects>
+                <tableViewController id="L4P-RO-tXN" customClass="PokeDexTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="XWO-fU-oUx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8cs-aq-Wfh">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="pokemonCellIdentifier" id="a3r-Vu-cPk">
+                                <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8cs-aq-Wfh" id="sYb-2q-7qY">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a3r-Vu-cPk" id="qpA-y1-zRC">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="N5G-Zq-ZCL" kind="show" id="6mt-8V-Im1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="LMr-pW-jfn" id="duA-Kw-BPw"/>
-                            <outlet property="delegate" destination="LMr-pW-jfn" id="9XI-Mx-XJq"/>
-                        </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="cSD-Qp-1HO">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="IhX-9d-igI">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="a-z"/>
+                                <segment title="type"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentControlIndexChanged:" destination="L4P-RO-tXN" eventType="valueChanged" id="CEe-6i-SMw"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="IhX-9d-igI" id="iAL-xx-boD"/>
+                    </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jmG-GJ-FXi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eFh-9n-NXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="316" y="189"/>
+            <point key="canvasLocation" x="335" y="189"/>
         </scene>
     </scenes>
 </document>
