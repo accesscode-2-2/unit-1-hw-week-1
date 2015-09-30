@@ -381,6 +381,8 @@ PokemonTableViewController
                           @"Machamp",
                           @"Hitmonlee",
                           @"Hitmonchan"];
+    self.pokemonArray = [self.pokemonArray sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+
 
 }
 
