@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "PokemonTableViewController.h"
 
 @interface DetailViewController ()
 
@@ -16,7 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.label.text = self.pokemonName;
+    
+    NSString *imageName = [self.pokemonName lowercaseString];
+    self.imageView.image = [UIImage imageNamed:imageName];
 }
 
 - (void)didReceiveMemoryWarning {

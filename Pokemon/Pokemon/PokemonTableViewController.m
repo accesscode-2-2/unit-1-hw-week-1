@@ -13,6 +13,7 @@
 
 @property (nonatomic) NSDictionary *pokemon;
 @property (nonatomic) NSArray *pokemonArray;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segControl;
 
 @end
 
@@ -22,6 +23,8 @@ PokemonTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"Pokedex";
     
     self.pokemon = @{
                      @"Grass" : @[@"Bulbasaur",
@@ -92,7 +95,7 @@ PokemonTableViewController
                                    @"Fearow",
                                    @"Zubat",
                                    @"Golbat",
-                                   @"Farfetch",
+                                   @"Farfetchd",
                                    @"Doduo",
                                    @"Dodrio",
                                    @"Scyther",
@@ -157,7 +160,7 @@ PokemonTableViewController
                                  @"Wigglytuff",
                                  @"Meowth",
                                  @"Persian",
-                                 @"Farfetch",
+                                 @"Farfetchd",
                                  @"Doduo",
                                  @"Dodrio",
                                  @"Lickitung",
@@ -195,7 +198,7 @@ PokemonTableViewController
                                  @"Clefable",
                                  @"Jigglypuff",
                                  @"Wigglytuff",
-                                 @"Mr. Mime"],
+                                 @"Mr-mime"],
                      @"Fighting": @[@"Mankey",
                                     @"Primeape",
                                     @"Poliwrath",
@@ -214,7 +217,7 @@ PokemonTableViewController
                                    @"Exeggcute",
                                    @"Exeggutor",
                                    @"Starmie",
-                                   @"Mr. Mime",
+                                   @"Mr-mime",
                                    @"Jynx",
                                    @"Mewtwo",
                                    @"Mew"],
@@ -295,7 +298,7 @@ PokemonTableViewController
                           @"Drowzee",
                           @"Hypno",
                           @"Starmie",
-                          @"Mr. Mime",
+                          @"Mr-mime",
                           @"Jynx",
                           @"Mewtwo",
                           @"Mew",
@@ -351,7 +354,7 @@ PokemonTableViewController
                           @"Wigglytuff",
                           @"Meowth",
                           @"Persian",
-                          @"Farfetch",
+                          @"Farfetchd",
                           @"Doduo",
                           @"Dodrio",
                           @"Lickitung",
@@ -393,19 +396,35 @@ PokemonTableViewController
     
     NSArray *keys = [self.pokemon allKeys];
     
-    return keys.count;
-    
+//    return keys.count;
+
+    if (self.segControl.selectedSegmentIndex == 0) {
+        return 1;
+    } else {
+        return keys.count;
+    }
     
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     
-    NSArray *keys = [self.pokemon allKeys];
-    NSString *words = keys[section];
-    NSArray *words2 = [self.pokemon objectForKey:words];
+//    NSArray *keys = [self.pokemon allKeys];
+//    NSString *words = keys[section];
+//    NSArray *words2 = [self.pokemon objectForKey:words];
+//    
+//    return words2.count;
     
-    return words2.count;
+    if (self.segControl.selectedSegmentIndex
+        == 0) {
+        return self.pokemonArray.count;
+    } else {
+        NSArray *keys = [self.pokemon allKeys];
+        NSString *words = keys[section];
+        NSArray *words2 = [self.pokemon objectForKey:words];
+        
+        return words2.count;
+    }
     
     
 }
@@ -414,11 +433,11 @@ PokemonTableViewController
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pokemonCell" forIndexPath:indexPath];
     
-    NSArray *keys = [self.pokemon allKeys];
-    NSString *words = keys[indexPath.section];
-    NSArray *words2 = [self.pokemon objectForKey:words];
+//    NSArray *keys = [self.pokemon allKeys];
+//    NSString *words = keys[indexPath.section];
+//    NSArray *words2 = [self.pokemon objectForKey:words];
     
-    NSString *pokemonNames = [words2 objectAtIndex:indexPath.row];
+    NSString *pokemonNames = [self objectForIndexPath:indexPath];
     
     cell.textLabel.text = pokemonNames;
     cell.imageView.image = [UIImage imageNamed:pokemonNames];
@@ -434,26 +453,30 @@ PokemonTableViewController
     return words;
 }
 
-- (UIView *) tableView:(UITableView *) tableView viewForHeaderInSection:(NSInteger)section{
+- (IBAction)segSelect:(id)sender {
+    [self.tableView reloadData];
+}
 
-    if (section == 0) {
-        
-    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"Alphabetically", @"Type"]];
-        
-        return segmentedControl;
+
+- (id)objectForIndexPath:(NSIndexPath *)indexPath {
+//    return self.pokemonArray[indexPath.row];
+    if (self.segControl.selectedSegmentIndex == 0) {
+        return self.pokemonArray[indexPath.row];
+    } else {
+        NSArray *keys = [self.pokemon allKeys];
+        NSString *words = keys[indexPath.section];
+        NSArray *words2 = [self.pokemon objectForKey:words];
+        return words2[indexPath.row];
     }
-    
-    return nil;
-    
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    //get indexPath
-    NSIndexPath *index = [self.tableView indexPathForSelectedRow];
-    
-    //store information from NSArray into row
-    //NSString *pk = [self.pokemonArray objectAtIndex: index.row];
+
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    NSString *pokemonName = [self.pokemonArray objectAtIndex:indexPath.row];
+
+    DetailViewController *vc = [segue destinationViewController];
+    vc.pokemonName = pokemonName;
     
 }
 

@@ -11,5 +11,7 @@
 @interface DetailViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (nonatomic) NSArray *pokemonArray;
+@property (nonatomic) NSString *pokemonName;
 
 @end
