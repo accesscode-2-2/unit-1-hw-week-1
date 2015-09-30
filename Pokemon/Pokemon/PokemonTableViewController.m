@@ -447,10 +447,17 @@ PokemonTableViewController
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 
-    NSArray *key = [self.pokemon allKeys];
-    NSString *words = key [section];
+//    NSArray *key = [self.pokemon allKeys];
+//    NSString *words = key [section];
+//    
+//    return words;
     
-    return words;
+    if (self.segControl.selectedSegmentIndex == 1) {
+        NSArray *keys = [self.pokemon allKeys];
+        return keys[section];
+    } else {
+        return nil;
+    }
 }
 
 - (IBAction)segSelect:(id)sender {
@@ -473,7 +480,7 @@ PokemonTableViewController
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    NSString *pokemonName = [self.pokemonArray objectAtIndex:indexPath.row];
+    NSString *pokemonName = [self objectForIndexPath:indexPath];
 
     DetailViewController *vc = [segue destinationViewController];
     vc.pokemonName = pokemonName;
