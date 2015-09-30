@@ -442,6 +442,9 @@ PokemonTableViewController
     cell.textLabel.text = pokemonNames;
     cell.imageView.image = [UIImage imageNamed:pokemonNames];
     
+    //detail indicator
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
     return cell;
 }
 
