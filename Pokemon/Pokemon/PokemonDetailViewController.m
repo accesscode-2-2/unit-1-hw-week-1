@@ -2,7 +2,7 @@
 //  PokemonDetailViewController.m
 //  Pokemon
 //
-//  Created by Kaisha Jones on 9/29/15.
+//  Created by Kaisha Jones on 9/30/15.
 //  Copyright © 2015 Mike Kavouras. All rights reserved.
 //
 
@@ -10,8 +10,10 @@
 
 @interface PokemonDetailViewController ()
 
+
 @property (weak, nonatomic) IBOutlet UILabel *pokemonNameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *pokemonImage;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 
 @end
 
@@ -21,14 +23,33 @@
     [super viewDidLoad];
     
     self.pokemonNameLabel.text = self.pokemonName;
-    self.pokemonImage.image = [UIImage imageNamed:self.pokemonName];
+    NSString *imageName = [self.pokemonName lowercaseString];
+    self.imageView.image = [UIImage imageNamed:imageName];
     
+    
+    
+    
+    // Do any additional setup after loading the view.
+
+
+
+
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
+    // Dispose of any resources that can be recreated.
 }
 
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

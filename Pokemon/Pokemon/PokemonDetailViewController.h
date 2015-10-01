@@ -2,7 +2,7 @@
 //  PokemonDetailViewController.h
 //  Pokemon
 //
-//  Created by Kaisha Jones on 9/29/15.
+//  Created by Kaisha Jones on 9/30/15.
 //  Copyright © 2015 Mike Kavouras. All rights reserved.
 //
 

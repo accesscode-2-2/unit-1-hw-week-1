@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="L4P-RO-tXN" kind="relationship" relationship="rootViewController" id="MyE-Ao-7mV"/>
+                        <segue destination="L4P-RO-tXN" kind="relationship" relationship="rootViewController" id="9dQ-MI-WDa"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cpl-0V-loJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -56,24 +56,24 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pokemonImage" destination="Lkb-qZ-sc2" id="Hlb-SW-06L"/>
-                        <outlet property="pokemonNameLabel" destination="3eM-VS-5Jw" id="3fM-WF-Z7G"/>
+                        <outlet property="imageView" destination="Lkb-qZ-sc2" id="6Lu-O3-B4P"/>
+                        <outlet property="pokemonNameLabel" destination="3eM-VS-5Jw" id="Vbk-Ys-ApI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uSd-VC-Frz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="952" y="189"/>
         </scene>
-        <!--Poke Dex Table View Controller-->
+        <!--Pokemon Table View Controller-->
         <scene sceneID="peK-ye-d30">
             <objects>
-                <tableViewController id="L4P-RO-tXN" customClass="PokeDexTableViewController" sceneMemberID="viewController">
+                <tableViewController id="L4P-RO-tXN" customClass="PokemonTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="XWO-fU-oUx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="pokemonCellIdentifier" id="a3r-Vu-cPk">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PokemonCellIdentifier" id="a3r-Vu-cPk">
                                 <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a3r-Vu-cPk" id="qpA-y1-zRC">
@@ -92,16 +92,16 @@
                             <rect key="frame" x="180" y="7" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="a-z"/>
+                                <segment title="A-Z"/>
                                 <segment title="type"/>
                             </segments>
                             <connections>
-                                <action selector="segmentControlIndexChanged:" destination="L4P-RO-tXN" eventType="valueChanged" id="CEe-6i-SMw"/>
+                                <action selector="segmentSelected:" destination="L4P-RO-tXN" eventType="valueChanged" id="z42-GT-8p4"/>
                             </connections>
                         </segmentedControl>
                     </navigationItem>
                     <connections>
-                        <outlet property="segmentedControl" destination="IhX-9d-igI" id="iAL-xx-boD"/>
+                        <outlet property="segementedControl" destination="IhX-9d-igI" id="EEE-ts-ysR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFh-9n-NXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
