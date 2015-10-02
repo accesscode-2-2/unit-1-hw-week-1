@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PokemonArray.h"
 
 @interface PokemonDetailViewController : UIViewController
 
 @property (nonatomic) NSString *pokemonName;
+@property (nonatomic) PokemonArray *pokemon;
 
 @end

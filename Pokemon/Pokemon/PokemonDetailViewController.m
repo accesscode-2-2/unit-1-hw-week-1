@@ -21,19 +21,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    //getting the image by matching the name
     self.pokemonNameLabel.text = self.pokemonName;
     NSString *imageName = [self.pokemonName lowercaseString];
     self.imageView.image = [UIImage imageNamed:imageName];
     
-    
-    
-    
-    // Do any additional setup after loading the view.
-
-
-
-
 
 }
 
