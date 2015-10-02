@@ -15,8 +15,8 @@
 		8DD0D68B1B65C9200007E103 /* PokemonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD0D68A1B65C9200007E103 /* PokemonTests.m */; };
 		A4283AE81BBCB0DA008784A3 /* PokemonArray.m in Sources */ = {isa = PBXBuildFile; fileRef = A4283AE71BBCB0DA008784A3 /* PokemonArray.m */; };
 		A4815D141BBCD65100BAC86B /* PokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4815D131BBCD65100BAC86B /* PokemonDetailViewController.m */; };
-		A4815D171BBCD75B00BAC86B /* PokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4815D161BBCD75B00BAC86B /* PokemonTableViewController.m */; };
 		A4DFB8C91BBE383A00A069A2 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DFB8C81BBE383A00A069A2 /* APIManager.m */; };
+		A4DFB8CC1BBE3F8200A069A2 /* PKPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DFB8CB1BBE3F8200A069A2 /* PKPokemonTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,10 +45,10 @@
 		A4283AE71BBCB0DA008784A3 /* PokemonArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonArray.m; sourceTree = SOURCE_ROOT; };
 		A4815D121BBCD65100BAC86B /* PokemonDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokemonDetailViewController.h; sourceTree = "<group>"; };
 		A4815D131BBCD65100BAC86B /* PokemonDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonDetailViewController.m; sourceTree = "<group>"; };
-		A4815D151BBCD75B00BAC86B /* PokemonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokemonTableViewController.h; sourceTree = "<group>"; };
-		A4815D161BBCD75B00BAC86B /* PokemonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonTableViewController.m; sourceTree = "<group>"; };
 		A4DFB8C71BBE383A00A069A2 /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
 		A4DFB8C81BBE383A00A069A2 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		A4DFB8CA1BBE3F8200A069A2 /* PKPokemonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKPokemonTableViewController.h; sourceTree = "<group>"; };
+		A4DFB8CB1BBE3F8200A069A2 /* PKPokemonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKPokemonTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +96,10 @@
 				A4DFB8C81BBE383A00A069A2 /* APIManager.m */,
 				A4283AE61BBCB0DA008784A3 /* PokemonArray.h */,
 				A4283AE71BBCB0DA008784A3 /* PokemonArray.m */,
+				A4DFB8CA1BBE3F8200A069A2 /* PKPokemonTableViewController.h */,
+				A4DFB8CB1BBE3F8200A069A2 /* PKPokemonTableViewController.m */,
 				A4815D121BBCD65100BAC86B /* PokemonDetailViewController.h */,
 				A4815D131BBCD65100BAC86B /* PokemonDetailViewController.m */,
-				A4815D151BBCD75B00BAC86B /* PokemonTableViewController.h */,
-				A4815D161BBCD75B00BAC86B /* PokemonTableViewController.m */,
 				8DD0D6781B65C9200007E103 /* Main.storyboard */,
 				8DD0D67B1B65C9200007E103 /* Images.xcassets */,
 				8DD0D67D1B65C9200007E103 /* LaunchScreen.xib */,
@@ -234,11 +234,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4815D171BBCD75B00BAC86B /* PokemonTableViewController.m in Sources */,
 				8DD0D6741B65C9200007E103 /* AppDelegate.m in Sources */,
 				A4DFB8C91BBE383A00A069A2 /* APIManager.m in Sources */,
 				A4283AE81BBCB0DA008784A3 /* PokemonArray.m in Sources */,
 				8DD0D6711B65C9200007E103 /* main.m in Sources */,
+				A4DFB8CC1BBE3F8200A069A2 /* PKPokemonTableViewController.m in Sources */,
 				A4815D141BBCD65100BAC86B /* PokemonDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

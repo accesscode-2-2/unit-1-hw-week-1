@@ -19,7 +19,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cpl-0V-loJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-379" y="189"/>
+            <point key="canvasLocation" x="-317" y="158"/>
         </scene>
         <!--Pokemon Detail View Controller-->
         <scene sceneID="CN0-oA-R8i">
@@ -62,18 +62,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uSd-VC-Frz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952" y="189"/>
+            <point key="canvasLocation" x="996" y="158"/>
         </scene>
         <!--Pokemon Table View Controller-->
         <scene sceneID="peK-ye-d30">
             <objects>
-                <tableViewController storyboardIdentifier="RootViewController" id="L4P-RO-tXN" customClass="PokemonTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="RootViewController" id="L4P-RO-tXN" customClass="PKPokemonTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="XWO-fU-oUx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PokemonCellIdentifier" id="a3r-Vu-cPk">
+                            <tableViewCell multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PokemonCellIdentifier" id="a3r-Vu-cPk">
                                 <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a3r-Vu-cPk" id="qpA-y1-zRC">
@@ -93,20 +93,20 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="A-Z"/>
-                                <segment title="type"/>
+                                <segment title="Type"/>
                             </segments>
                             <connections>
-                                <action selector="segmentSelected:" destination="L4P-RO-tXN" eventType="valueChanged" id="MuT-5r-FBP"/>
+                                <action selector="segmentSelected:" destination="L4P-RO-tXN" eventType="valueChanged" id="7bX-fA-22P"/>
                             </connections>
                         </segmentedControl>
                     </navigationItem>
                     <connections>
-                        <outlet property="segementedControl" destination="IhX-9d-igI" id="6dp-ZU-YfU"/>
+                        <outlet property="segementedControl" destination="IhX-9d-igI" id="Unl-cs-Q24"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFh-9n-NXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="299" y="189"/>
+            <point key="canvasLocation" x="345" y="158"/>
         </scene>
     </scenes>
 </document>

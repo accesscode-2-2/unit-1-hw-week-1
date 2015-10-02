@@ -10,11 +10,18 @@
 // our table view has a model which is a class
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface PokemonArray : NSObject
 
 @property (nonatomic) NSArray *aToZPokedex;
 @property (nonatomic) NSDictionary *typePokedex;
+@property (nonatomic) NSString *namePokemon;
+@property (nonatomic) NSString *picturePokemonURL;
+
++ (NSArray *)allPokemons;
+
+- (UIImage *)picturePokemon;
 
 - (void)initializeData;
 
