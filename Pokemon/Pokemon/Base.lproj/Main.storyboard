@@ -14,8 +14,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="L4P-RO-tXN" kind="show" id="e9K-Bj-rJF"/>
-                        <segue destination="L4P-RO-tXN" kind="relationship" relationship="rootViewController" id="o0y-xZ-o4m"/>
+                        <segue destination="L4P-RO-tXN" kind="relationship" relationship="rootViewController" id="oH3-Ay-PAK"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cpl-0V-loJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -107,10 +106,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFh-9n-NXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="323" y="189"/>
+            <point key="canvasLocation" x="299" y="189"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="e9K-Bj-rJF"/>
-    </inferredMetricsTieBreakers>
 </document>

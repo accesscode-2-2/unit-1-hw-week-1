@@ -16,6 +16,7 @@
 		A4283AE81BBCB0DA008784A3 /* PokemonArray.m in Sources */ = {isa = PBXBuildFile; fileRef = A4283AE71BBCB0DA008784A3 /* PokemonArray.m */; };
 		A4815D141BBCD65100BAC86B /* PokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4815D131BBCD65100BAC86B /* PokemonDetailViewController.m */; };
 		A4815D171BBCD75B00BAC86B /* PokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4815D161BBCD75B00BAC86B /* PokemonTableViewController.m */; };
+		A4DFB8C91BBE383A00A069A2 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DFB8C81BBE383A00A069A2 /* APIManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		A4815D131BBCD65100BAC86B /* PokemonDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonDetailViewController.m; sourceTree = "<group>"; };
 		A4815D151BBCD75B00BAC86B /* PokemonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokemonTableViewController.h; sourceTree = "<group>"; };
 		A4815D161BBCD75B00BAC86B /* PokemonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonTableViewController.m; sourceTree = "<group>"; };
+		A4DFB8C71BBE383A00A069A2 /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		A4DFB8C81BBE383A00A069A2 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 			children = (
 				8DD0D6721B65C9200007E103 /* AppDelegate.h */,
 				8DD0D6731B65C9200007E103 /* AppDelegate.m */,
+				A4DFB8C71BBE383A00A069A2 /* APIManager.h */,
+				A4DFB8C81BBE383A00A069A2 /* APIManager.m */,
 				A4283AE61BBCB0DA008784A3 /* PokemonArray.h */,
 				A4283AE71BBCB0DA008784A3 /* PokemonArray.m */,
 				A4815D121BBCD65100BAC86B /* PokemonDetailViewController.h */,
@@ -231,6 +236,7 @@
 			files = (
 				A4815D171BBCD75B00BAC86B /* PokemonTableViewController.m in Sources */,
 				8DD0D6741B65C9200007E103 /* AppDelegate.m in Sources */,
+				A4DFB8C91BBE383A00A069A2 /* APIManager.m in Sources */,
 				A4283AE81BBCB0DA008784A3 /* PokemonArray.m in Sources */,
 				8DD0D6711B65C9200007E103 /* main.m in Sources */,
 				A4815D141BBCD65100BAC86B /* PokemonDetailViewController.m in Sources */,
