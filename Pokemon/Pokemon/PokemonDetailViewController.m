@@ -27,6 +27,7 @@
     NSString *imageName = [self.pokemonName lowercaseString];
     self.imageView.image = [UIImage imageNamed:imageName];
     
+    
 
 }
 
